@@ -1,0 +1,125 @@
+// Form validation
+//
+.was-validated :valid ~ .valid-feedback,
+.was-validated :valid ~ .valid-tooltip,
+.is-valid ~ .valid-feedback,
+.is-valid ~ .valid-tooltip {
+  position: absolute;
+}
+
+.was-validated .form-control:valid,
+.form-control.is-valid,
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+  margin-bottom: 1rem;
+}
+
+.valid-feedback,
+.invalid-feedback {
+  margin-top: -0.75rem;
+}
+
+.was-validated :invalid ~ .invalid-feedback,
+.was-validated :invalid ~ .invalid-tooltip,
+.is-invalid ~ .invalid-feedback,
+.is-invalid ~ .invalid-tooltip {
+  position: absolute;
+}
+
+.was-validated .form-control:valid,
+.form-control.is-valid,
+.was-validated .form-control:invalid,
+.form-control.is-invalid,
+.was-validated .form-select:invalid,
+.form-select.is-invalid {
+  background-image: none;
+}
+
+.was-validated {
+  .form-outline {
+    .form-control {
+      &:valid,
+      &.is-valid {
+        ~ .form-label {
+          color: $success;
+        }
+        ~ .form-notch .form-notch-leading,
+        ~ .form-notch .form-notch-middle,
+        ~ .form-notch .form-notch-trailing {
+          border-color: $success;
+        }
+      }
+
+      &:invalid,
+      &.is-invalid {
+        ~ .form-label {
+          color: $danger;
+        }
+        ~ .form-notch .form-notch-leading,
+        ~ .form-notch .form-notch-middle,
+        ~ .form-notch .form-notch-trailing {
+          border-color: $danger;
+        }
+      }
+    }
+  }
+}
+
+.was-validated .form-check-input.is-valid:checked[type='checkbox']:before {
+  border-color: #fff;
+}
+.was-validated .form-check-input.is-valid:checked[type='checkbox'] {
+  background-color: $success;
+  border-color: $success;
+}
+
+.was-validated .form-check-input.is-invalid:checked[type='checkbox']:before {
+  border-color: #fff;
+}
+.was-validated .form-check-input.is-invalid:checked[type='checkbox'] {
+  background-color: $danger;
+  border-color: $danger;
+}
+
+.was-validated .form-check-input:valid ~ .form-check-label,
+.form-check-input.is-valid ~ .form-check-label,
+.was-validated .form-check-input:invalid ~ .form-check-label,
+.form-check-input.is-invalid ~ .form-check-label {
+  margin-bottom: 1rem;
+}
+
+.was-validated .form-check-input:invalid:focus,
+.form-check-input.is-invalid:focus {
+  box-shadow: none;
+}
+
+.was-validated .form-check-input:valid:focus,
+.form-check-input.valid:focus {
+  box-shadow: none;
+}
+
+.was-validated .form-check-input:valid:checked:focus:before {
+  box-shadow: 0px 0px 0px 13px $success;
+}
+
+.was-validated .form-check-input:invalid:checked:focus:before {
+  box-shadow: 0px 0px 0px 13px $danger;
+}
+
+.was-validated .form-check-input[type='checkbox']:checked:valid:focus,
+.form-check-input[type='checkbox'].valid:checked:focus {
+  background-color: $success;
+  border-color: $success;
+}
+
+.was-validated .input-group .form-control:invalid,
+.was-validated .input-group .form-control.is-invalid,
+.was-validated .input-group .form-control:valid,
+.was-validated .input-group .form-control.is-valid {
+  margin-bottom: 0;
+}
+
+.was-validated .input-group .valid-feedback,
+.was-validated .input-group .invalid-feedback {
+  margin-top: 2.5rem;
+}

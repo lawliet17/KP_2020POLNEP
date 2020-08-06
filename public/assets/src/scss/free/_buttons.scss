@@ -1,0 +1,214 @@
+// Buttons base styles
+
+.btn {
+  font-family: $btn-font-family;
+  line-height: $btn-line-height;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  padding-top: $btn-padding-top;
+  padding-bottom: $btn-padding-bottom;
+  border: 0;
+  box-shadow: $btn-box-shadow;
+  font-size: $btn-font-size;
+  padding-left: $btn-padding-left;
+  padding-right: $btn-padding-right;
+  font-weight: $btn-font-weight;
+
+  &:hover {
+    box-shadow: $btn-hover-box-shadow;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: $btn-focus-box-shadow;
+  }
+
+  &:active,
+  &.active {
+    box-shadow: $btn-hover-box-shadow;
+
+    &:focus {
+      box-shadow: $btn-hover-box-shadow;
+    }
+  }
+
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    box-shadow: $btn-box-shadow;
+    border: 0;
+  }
+}
+
+// Buttons outline
+
+[class*='btn-outline-'] {
+  border-width: $btn-border-width;
+  border-style: solid;
+  box-shadow: none;
+  padding-top: $btn-outline-padding-top;
+  padding-bottom: $btn-outline-padding-bottom;
+  padding-left: $btn-outline-padding-left;
+  padding-right: $btn-outline-padding-right;
+
+  &:hover {
+    box-shadow: none;
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: none;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    box-shadow: none;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    box-shadow: none;
+  }
+
+  &.btn-sm {
+    padding-top: $btn-outline-padding-top-sm;
+    padding-bottom: $btn-outline-padding-bottom-sm;
+    padding-right: $btn-outline-padding-right-sm;
+    padding-left: $btn-outline-padding-left-sm;
+  }
+
+  &.btn-lg {
+    padding-top: $btn-outline-padding-top-lg;
+    padding-bottom: $btn-outline-padding-bottom-lg;
+    padding-right: $btn-outline-padding-right-lg;
+    padding-left: $btn-outline-padding-left-lg;
+  }
+}
+
+// Alternate buttons
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include button-variant-mdb($value);
+  }
+}
+
+// Alternate buttons outline
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    @include button-outline-variant-mdb($value);
+  }
+}
+
+// Button Sizes
+
+.btn-lg {
+  // @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+  line-height: $btn-line-height-lg;
+  font-size: $btn-font-size-lg;
+  padding-top: $btn-padding-top-lg;
+  padding-bottom: $btn-padding-bottom-lg;
+  padding-right: $btn-padding-right-lg;
+  padding-left: $btn-padding-left-lg;
+}
+
+.btn-sm {
+  // @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+  line-height: $btn-line-height-sm;
+  font-size: $btn-font-size-sm;
+  padding-top: $btn-padding-top-sm;
+  padding-bottom: $btn-padding-bottom-sm;
+  padding-right: $btn-padding-right-sm;
+  padding-left: $btn-padding-left-sm;
+}
+
+// Link buttons
+
+// Make a button look and behave like a link
+
+.btn-link {
+  box-shadow: none;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: none;
+    text-decoration: none;
+    background-color: $btn-link-bgc;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: none;
+    text-decoration: none;
+    background-color: $btn-link-bgc;
+  }
+
+  &:active,
+  &.active {
+    box-shadow: none;
+    background-color: $btn-link-bgc;
+
+    &:focus {
+      box-shadow: none;
+      background-color: $btn-link-bgc;
+    }
+  }
+
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    box-shadow: none;
+  }
+}
+
+.btn-rounded {
+  border-radius: $btn-rounded-border-radius;
+}
+
+.btn-floating,
+[class*='btn-outline-'].btn-floating {
+  border-radius: 50%;
+  padding: 0;
+}
+
+.btn-floating {
+  width: 36px;
+  height: 36px;
+
+  .fas,
+  .far,
+  .fab {
+    line-height: 1;
+    padding-right: 1px;
+  }
+
+  &.btn-sm {
+    width: 29px;
+    height: 29px;
+
+    .fas,
+    .far,
+    .fab {
+      padding-right: 1px;
+    }
+  }
+
+  &.btn-lg {
+    width: 45px;
+    height: 45px;
+
+    .fas,
+    .far,
+    .fab {
+      padding-right: 0;
+    }
+  }
+}
