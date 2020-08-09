@@ -32,6 +32,7 @@
                         <th scope="col" width="60">No</th>
                         <th scope="col" width="60">Id</th>
                         <th scope="col" width="60">Title</th>
+                        <th scope="col" width="60">Category</th>
                         <th scope="col" width="200">Aksi</th>
                     </tr>
                 </thead>
@@ -43,6 +44,11 @@
                             <td>{{$no}}</td>
                             <td>{{$post->id}}</td>
                             <td>{{$post->title}}</td>
+                            <td>
+                                @foreach($post->categories as $h)
+                                {{ $h->name }}
+                                @endforeach
+                            </td>
                             <td>
                                 <a href="{{route('posts.edit', $post->id)}}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                                 {!! Form::open(['route'=>['posts.destroy',$post->id],'method'=>'delete','style'=>'display:inline']) !!}

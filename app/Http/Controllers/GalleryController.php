@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Gallery;
+use App\Choice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +29,8 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        return view ('admin.gallery.create');
+        $choices = Choice::orderBy('name','DESC')->pluck('name','id');
+        return view ('admin.gallery.create',compact('choices'));
     }
 
     /**
@@ -41,16 +43,14 @@ class GalleryController extends Controller
     {
         $this->validate($request,[
             'image_url' => 'required',
-            'name' => 'required',
+            'choice_id' => 'required'
         ],
         [
             'image_url.required' => 'Pilih image',
-            'name' => 'Input name',
+            'choice_id.required' => 'Pilih kategori'
         ]);
         $gallery = new Gallery();
         $gallery->user_id = Auth::id();
-        $gallery->name = $request->name;
-
         if ($request->hasFile('image_url')) {
             $file=$request->file('image_url');
             $extension=$file->getClientOriginalExtension();
@@ -61,8 +61,10 @@ class GalleryController extends Controller
             return $request;
             $gallery->image_url='';
         }
-        $gallery->save();  
+        $gallery->save();
 
+        $gallery->choices()->sync($request->choice_id, false);        
+        
         Session::flash('message','Berhasil ditambahkan');
         return redirect ()->route('galleries.index');
     }
@@ -86,8 +88,8 @@ class GalleryController extends Controller
      */
     public function edit(Gallery $gallery)
     {
-        $galleries = Gallery::orderBy('id','DESC')->get();
-        return view('admin.gallery.edit',compact('gallery'));
+        $choices = Choice::orderBy('name','DESC')->pluck('name','id');
+        return view('admin.gallery.edit',compact('gallery','choices'));
     }
 
     /**
@@ -101,13 +103,14 @@ class GalleryController extends Controller
     {
         $this->validate($request,[
             'image_url' => 'required',
+            'choice_id' => 'required'
         ],
         [
             'image_url.required' => 'Pilih image',
+            'choice_id.required' => 'Pilih kategori'
         ]);
 
         $gallery->user_id = Auth::id();
-        $gallery->name = $request->name;
         if ($request->hasFile('image_url')) {
             $file=$request->file('image_url');
             $extension=$file->getClientOriginalExtension();
@@ -119,6 +122,8 @@ class GalleryController extends Controller
             $gallery->image_url='';
         }
         $gallery->save();
+
+        $gallery->choices()->sync($request->choice_id, false);
 
         Session::flash('message','Berhasil ditambahkan');
         return redirect ()->route('galleries.index');
@@ -132,7 +137,7 @@ class GalleryController extends Controller
      */
     public function destroy(Gallery $gallery)
     {
-        Storage::delete('public/galleries'. $gallery->image_url);
+        Storage::delete('storage/galleries'. $gallery->image_url);
         $gallery->delete();
 
         Session::flash('delete-message','Berhasil dihapus');

@@ -37,13 +37,19 @@
     <li class="nav-item">
       <a class="nav-link" href="{{route('categories.index')}}">
         <i class="fas fa-fw fa-table"></i>
-        <span>{{__('Categories')}}</span></a>
+        <span>{{__('Category Posts')}}</span></a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link" href="{{route('galleries.index')}}">
         <i class="fas fa-fw fa-table"></i>
         <span>{{__('Galleries')}}</span></a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="{{route('choices.index')}}">
+        <i class="fas fa-fw fa-table"></i>
+        <span>{{__('Choice')}}</span></a>
     </li>
 
     {{-- <li class="nav-item">

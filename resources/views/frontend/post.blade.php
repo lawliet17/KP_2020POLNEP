@@ -1,51 +1,105 @@
 @extends('frontend.master.app')
 @section('konten')
 
-<main style="margin-top: 70px">
+  <!--Main layout-->
+  <main class="mt-5 pt-5">
     <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb pt-4">
-                <li class="breadcrumb-item"><a href="/" class="text-black-50">Home</a></li>
-                <li class="breadcrumb-item"><a href="/berita" class="text-black-50">Berita</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Post</li>
-            </ol>
-        </nav>
 
-        <img src="https://mdbootstrap.com/img/new/slides/041.jpg" class="img-fluid shadow-1-strong rounded mb-4" alt="">
-    <h2><strong>Optio sapiente molestias consectetur?</strong></h2>
+      <!--Section: Post-->
+      <section class="mt-4">
 
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto ex ab aut
-      tempora officia libero praesentium, sint id magnam eius natus unde blanditiis. Autem
-      adipisci totam sit consequuntur eligendi.
-    </p>
+        <!--Grid row-->
+        <div class="row">
 
-    <p class="note note-light">
-      <strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      Optio odit consequatur porro sequi ab distinctio modi. Rerum cum dolores sint,
-      adipisci ad veritatis laborum eaque illum saepe mollitia ut voluptatum.
-    </p>
+          <!--Grid column-->
+          <div class="col-md-8 mb-4">
 
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, libero repellat
-      molestiae aperiam laborum aliquid atque magni nostrum, inventore perspiciatis
-      possimus quia incidunt maiores molestias eaque nam commodi! Magnam, labore.
-    </p>
+            <!--Featured Image-->
+            <div class="card mb-4 wow fadeIn">
 
-    
+              <img src="{{asset('storage/galleries/'. $post->thumbnail)}}" class="img-fluid" alt="">
 
-    <ul>
-      <li>Lorem</li>
-      <li>Ipsum</li>
-      <li>Dolor</li>
-      <li>Sit</li>
-      <li>Amet</li>
-    </ul>
+            </div>
+            <!--/.Featured Image-->
 
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, temporibus nulla
-      voluptatibus accusantium sapiente doloremque. Doloribus ratione laboriosam culpa. Ab
-      officiis quidem, debitis nostrum in accusantium dolore veritatis eius est?
-    </p>
+            <!--Card-->
+            <div class="card mb-4 wow fadeIn">
+
+              <!--Card content-->
+              <div class="card-body">
+
+                <div class="post-heading">
+                  <h3>{{$post->title}}</h3>
+                  <span class="meta">Posted by
+                    <a href="#">{{$post->user->name}}</a>
+                    on {{date('M d, Y', strtotime($post->created_at))}}</span>
+                </div>
+                <br>
+                {!! $post->details!!}
+              </div>
+
+            </div>
+            <!--/.Card-->
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-4 mb-4">
+
+            <!--Card-->
+            <div class="card mb-4 wow fadeIn">
+
+              <div class="card-header">Related articles</div>
+
+              <!--Card content-->
+              <div class="card-body">
+
+                <ul class="list-unstyled">
+                  <li class="media">
+                    <img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder7.jpg" alt="Generic placeholder image">
+                    <div class="media-body">
+                      <a href="">
+                        <h5 class="mt-0 mb-1 font-weight-bold">List-based media object</h5>
+                      </a>
+                      Cras sit amet nibh libero, in gravida nulla (...)
+                    </div>
+                  </li>
+                  <li class="media my-4">
+                    <img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder6.jpg" alt="An image">
+                    <div class="media-body">
+                      <a href="">
+                        <h5 class="mt-0 mb-1 font-weight-bold">List-based media object</h5>
+                      </a>
+                      Cras sit amet nibh libero, in gravida nulla (...)
+                    </div>
+                  </li>
+                  <li class="media">
+                    <img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder5.jpg" alt="Generic placeholder image">
+                    <div class="media-body">
+                      <a href="">
+                        <h5 class="mt-0 mb-1 font-weight-bold">List-based media object</h5>
+                      </a>
+                      Cras sit amet nibh libero, in gravida nulla (...)
+                    </div>
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
+            <!--/.Card-->
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+      </section>
+      <!--Section: Post-->
+
     </div>
-</main>
+  </main>
+  <!--Main layout-->
+@endsection

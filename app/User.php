@@ -51,4 +51,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Gallery::class);
     }
+
+    public function choices()
+    {
+        return $this->hasMany(Choice::class);
+    }
+
+    public function banners()
+    {
+        return $this->hasMany(Banner::class);
+    }
 }

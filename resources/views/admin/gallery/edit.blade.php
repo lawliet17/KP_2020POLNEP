@@ -9,12 +9,12 @@
         <div class="card-body">
             {!! Form::open(['route'=>['galleries.update',$gallery->id],'method'=>'put','enctype'=>'multipart/form-data']) !!}
             
-            <div class="form-group @if($errors->has('name')) has-error @endif">
-                {!! Form::label('Name') !!}
-                {!! Form::text('name', $gallery->name, ['class'=>'form-control','placeholder'=>'Name']) !!}
-                @if ($errors->has('name'))
+            <div class="form-group @if($errors->has('choice_id')) has-error @endif">
+                {!! Form::label('Choice') !!}
+                {!! Form::select('choice_id',$choices , null, ['class'=>'form-control','id'=>'choice_id']) !!}
+                @if ($errors->has('choice_id'))
                     <span class="help-block">
-                        {!! $errors->first('name')!!}
+                        {!! $errors->first('choice_id')!!}
                     </span>
                 @endif
             </div>
@@ -39,3 +39,14 @@
     </div>
   </div>    
 @endsection
+
+{{-- @section('edit-galleries')
+    <script>
+        $(document).ready(function() {
+      
+    $('#choice_id3').select2({
+      placeholder : "Select Categories"
+    }).val({!!json_encode($gallery->choices()->allRelatedIds())!!}).trigger('change');
+  });
+    </script>
+@endsection --}}

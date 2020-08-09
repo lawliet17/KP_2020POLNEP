@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
 use App\Gallery;
+use App\Choice;
 
 class HomeController extends Controller
 {
@@ -29,6 +30,7 @@ class HomeController extends Controller
         $posts = Post::count();
         $categories = Category::count();
         $galleries = Gallery::count();
-        return view('admin.index', compact('posts','categories','galleries'));
+        $choices = Choice::count();
+        return view('admin.index', compact('posts','categories','galleries','choices'));
     }
 }

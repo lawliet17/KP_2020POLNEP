@@ -17,36 +17,31 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/h','WebsiteController@index')->name('index');
-Route::get('/category/{id}','WebsiteController@category')->name('category');
-Route::get('/post/{id}','WebsiteController@post')->name('post');
-Route::get('/page/{id}','WebsiteController@page')->name('page');
-Route::get('/contact','WebsiteController@showContact')->name('contact.show');
-Route::post('/contact','WebsiteController@submitContact')->name('contact.submit');
 
+
+Route::get('/page/{id}','FrontController@page')->name('page');
+Route::get('/contact','FrontController@showContact')->name('contact.show');
+Route::post('/contact','FrontController@submitContact')->name('contact.submit');
+
+//  Admin
 Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
+    Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('categories','CategoryController');
     Route::resource('posts','PostController');
     Route::resource('pages','PageController');
     Route::resource('galleries','GalleryController');
+    Route::resource('choices','ChoiceController');
+    Route::resource('banners','BannerController');
 
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+//  Frontend
+Route::get('/', 'FrontController@index')->name('homepage');
 
-// Frontend Demo
-Route::get('/', function () {
-    return view('frontend.homepage');
-});
-Route::get('/profil', function () {
-    return view('frontend.profil');
-});
-Route::get('/galeri', function () {
-    return view('frontend.galeri');
-});
-Route::get('/berita', function () {
-    return view('frontend.berita');
-});
-Route::get('/post', function () {
-    return view('frontend.post');
-});
+Route::get('/berita','FrontController@news')->name('news');
+Route::get('/category/{id}','FrontController@category')->name('category');
+Route::get('/post/{id}','FrontController@post')->name('post');
+
+Route::get('/galeri','FrontController@gallery')->name('galery.index');
+Route::get('/choice/{id}','FrontController@showGallery')->name('galeri.show');

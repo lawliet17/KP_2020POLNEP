@@ -1,0 +1,11 @@
+.card-comments img{width:4rem}
+
+
+  .active-cyan-4 input[type=Search]:focus:not([readonly]) {
+    border: 1px solid #2ad370;
+    box-shadow: 0 0 0 1px #2ad370;
+  }
+  .active-cyan-3 input[type=Search] {
+    border: 1px solid #2ad370;
+    box-shadow: 0 0 0 1px #2ad370;
+  }

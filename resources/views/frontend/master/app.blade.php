@@ -14,20 +14,23 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
     />
-    <!-- MDB -->
-    <link rel="stylesheet" href="{{asset("assets/css/mdb.min.css")}}" />
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="{{asset("assets/css/bootstrap.min.css")}}" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="{{asset("assets/css/mdb.min.css")}}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="{{asset("assets/css/style.min.css")}}" rel="stylesheet">
+    
   <style>
       body {
         --text-color: #cccccc;
-        --bkg-color: #121212;
-        --bg-color:#121212;
+        --bg-color: #121212;
+
       }
       body.light-theme {
         --text-color: #313131;
-        --bkg-color: #fff;
         --bg-color: #fff;
+
       }
       body.dark-theme img {
       filter: brightness(.8) contrast(1.2);
@@ -38,8 +41,9 @@
     }
     
     body {
-      background: var(--bkg-color);
-      background-color: var(--bg-color);
+      background: var(--bg-color);
+      
+
     }
     
     h1,h2,h3,h4,h5,p,u {
@@ -218,13 +222,23 @@
     
   </body>
 
-  <!-- MDB -->
+    <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="{{asset("assets/js/jquery-3.4.1.min.js")}}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{{asset("assets/js/popper.min.js")}}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{{asset("assets/js/bootstrap.min.js")}}"></script>
+  <!-- MDB core JavaScript -->
   <script type="text/javascript" src="{{asset("assets/js/mdb.min.js")}}"></script>
-  <!-- Custom scripts -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <script type="text/javascript">
+
+      //Lightbox
+      $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+          event.preventDefault();
+          $(this).ekkoLightbox();
+        });
+      //Lightbox
   const btn = document.querySelector(".switch_dark");
   const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 

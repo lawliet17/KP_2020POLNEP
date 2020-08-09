@@ -43,7 +43,13 @@
                         <tr>
                             <td>{{$no}}</td>
                             <td>{{$gallery->id}}</td>
-                            <td>{{$gallery->user->name}}</td>
+                            <td>
+                                @foreach($gallery->choices as $h)
+                                {{ $h->name }}
+                                @endforeach
+                            </td>
+                            
+                            {{-- <td>{{$gallery->choices}}</td> --}}
                             <td><img src="{{asset('storage/galleries/'. $gallery->image_url)}}" width="50px" height="50px"></td>
                             <td>
                                 <a href="{{route('galleries.edit', $gallery->id)}}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>

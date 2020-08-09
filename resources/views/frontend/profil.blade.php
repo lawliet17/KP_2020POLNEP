@@ -1,14 +1,10 @@
 @extends('frontend.master.app')
 @section('konten')
 
-<main style="margin-top: 70px">
-    <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb pt-4">
-                <li class="breadcrumb-item"><a href="/" class="text-black-50">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Profil</li>
-            </ol>
-        </nav>
+  <!--Main layout-->
+  <main class="mt-5 p-5">
+    <div class="container card">
+    <h2 class="my-2 h3 text-center">Profil Polnep</h2>
     <p class="text-justify">
     <b>Politeknik Negeri Pontianak (POLNEP)</b> merupakan sistem Pendidikan Tinggi jalur profesional yang menekankan penguasaan dan pengembangan Ilmu Pengetahuan dan Teknologi untuk mendukung era industrialisasi. Secara umum, sistem pendidikan Politeknik mempunyai ciri-ciri sebagai berikut :
     <br>1. Pendidikan tinggi yang kurikulumnya berbasis kompetensi.
@@ -40,3 +36,5 @@
     </p>
     </div>
 </main>
+  <!--Main layout-->
+@endsection

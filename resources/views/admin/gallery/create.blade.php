@@ -7,21 +7,22 @@
         </div>
         
         <div class="card-body">
+
             {!! Form::open(['route'=>'galleries.store','enctype' =>'multipart/form-data']) !!}
-            
-            <div class="form-group @if($errors->has('name')) has-error @endif">
-                {!! Form::label('Name') !!}
-                {!! Form::text('name', null, ['class'=>'form-control','placeholder'=>'Name']) !!}
-                @if ($errors->has('name'))
+            <div class="form-group @if($errors->has('choice_id')) has-error @endif">
+                {!! Form::label('Choice') !!}
+                {!! Form::select('choice_id',$choices , null, ['class'=>'form-control','id'=>'choice_id']) !!}
+                @if ($errors->has('choice_id'))
                     <span class="help-block">
-                        {!! $errors->first('name')!!}
+                        {!! $errors->first('choice_id')!!}
                     </span>
                 @endif
             </div>
 
+
             <div class="form-group @if($errors->has('image_url')) has-error @endif">
                 {!! Form::label('Image url','Image Url', ['style'=>' display:block;']) !!}
-                {!! Form::file('image_url',['class'=>'form-control','placeholder'=>'Input Image']) !!}
+                {!! Form::file('image_url',['class'=>'form-control','placeholder'=>'Thumbnail']) !!}
                 @if ($errors->has('image_url'))
                     <span class="help-block">
                         {!! $errors->first('image_url')!!}
@@ -35,3 +36,14 @@
     </div>
   </div>    
 @endsection
+
+{{-- @section('create-galleries')
+<script>
+    $(document).ready(function() {
+      
+    $('#choice_id').select2({
+      placeholder : "Select Categories"
+    });
+  });
+  </script>
+@endsection --}}
