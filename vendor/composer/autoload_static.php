@@ -128,6 +128,10 @@ class ComposerStaticInitbb4081a279f35545810687fb96ae724b
             'Illuminate\\Foundation\\Auth\\' => 27,
             'Illuminate\\' => 11,
         ),
+        'H' => 
+        array (
+            'Harimayco\\Menu\\' => 15,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
@@ -383,6 +387,10 @@ class ComposerStaticInitbb4081a279f35545810687fb96ae724b
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
         ),
+        'Harimayco\\Menu\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/harimayco/laravel-menu/src',
+        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
@@ -491,8 +499,11 @@ class ComposerStaticInitbb4081a279f35545810687fb96ae724b
     );
 
     public static $classMap = array (
+        'App\\Banner' => __DIR__ . '/../..' . '/app/Banner.php',
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
+        'App\\CategoryGalery' => __DIR__ . '/../..' . '/app/CategoryGalery.php',
         'App\\CategoryPost' => __DIR__ . '/../..' . '/app/CategoryPost.php',
+        'App\\Choice' => __DIR__ . '/../..' . '/app/Choice.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Gallery' => __DIR__ . '/../..' . '/app/Gallery.php',
@@ -502,8 +513,11 @@ class ComposerStaticInitbb4081a279f35545810687fb96ae724b
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\BannerController' => __DIR__ . '/../..' . '/app/Http/Controllers/BannerController.php',
         'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
+        'App\\Http\\Controllers\\ChoiceController' => __DIR__ . '/../..' . '/app/Http/Controllers/ChoiceController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\FrontController' => __DIR__ . '/../..' . '/app/Http/Controllers/FrontController.php',
         'App\\Http\\Controllers\\GalleryController' => __DIR__ . '/../..' . '/app/Http/Controllers/GalleryController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\PageController' => __DIR__ . '/../..' . '/app/Http/Controllers/PageController.php',
@@ -1513,6 +1527,12 @@ class ComposerStaticInitbb4081a279f35545810687fb96ae724b
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+        'Harimayco\\Menu\\Controllers\\MenuController' => __DIR__ . '/..' . '/harimayco/laravel-menu/src/Controllers/MenuController.php',
+        'Harimayco\\Menu\\Facades\\Menu' => __DIR__ . '/..' . '/harimayco/laravel-menu/src/Facades/Menu.php',
+        'Harimayco\\Menu\\MenuServiceProvider' => __DIR__ . '/..' . '/harimayco/laravel-menu/src/MenuServiceProvider.php',
+        'Harimayco\\Menu\\Models\\MenuItems' => __DIR__ . '/..' . '/harimayco/laravel-menu/src/Models/MenuItems.php',
+        'Harimayco\\Menu\\Models\\Menus' => __DIR__ . '/..' . '/harimayco/laravel-menu/src/Models/Menus.php',
+        'Harimayco\\Menu\\WMenu' => __DIR__ . '/..' . '/harimayco/laravel-menu/src/WMenu.php',
         'Highlight\\Autoloader' => __DIR__ . '/..' . '/scrivo/highlight.php/Highlight/Autoloader.php',
         'Highlight\\HighlightResult' => __DIR__ . '/..' . '/scrivo/highlight.php/Highlight/HighlightResult.php',
         'Highlight\\Highlighter' => __DIR__ . '/..' . '/scrivo/highlight.php/Highlight/Highlighter.php',

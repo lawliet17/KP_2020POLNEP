@@ -64,7 +64,7 @@ class ChoiceController extends Controller
      */
     public function show(Choice $choice)
     {
-        //
+        return view('admin.choice.show', ['choice'=>Choice::find($choice)]);   
     }
 
     /**

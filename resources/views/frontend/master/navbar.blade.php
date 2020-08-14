@@ -26,44 +26,20 @@
 
           <!-- Left -->
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link waves-effect rounded" href="/">Beranda
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link waves-effect rounded dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                aria-expanded="false">Profil</a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="/profil">Pesan Direktur</a>
-                <a class="dropdown-item" href="/profil">Sejarah Singkat</a>
-                <a class="dropdown-item" href="/profil">Profil Polnep</a>
-                <a class="dropdown-item" href="/profil">Visi dan Misi</a>
-                <a class="dropdown-item" href="/profil">Struktur Organisasi</a>
-                <a class="dropdown-item" href="/profil">Pejabat Struktural</a>
-                <a class="dropdown-item" href="/profil">Makna Lambang</a>
-                <a class="dropdown-item" href="/profil">Denah Polnep</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link waves-effect rounded dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-              aria-expanded="false">Jurusan</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" target="_blank" href="http://sipil.polnep.ac.id/">Teknik Sipil</a>
-              <a class="dropdown-item" target="_blank"  href="http://mesin.polnep.ac.id/">Teknik Mesin</a>
-              <a class="dropdown-item" target="_blank"  href="http://elektro.polnep.ac.id/">Teknik Elektro</a>
-              <a class="dropdown-item" target="_blank"  href="http://ab.polnep.ac.id/">Administrasi Bisnis</a>
-              <a class="dropdown-item" target="_blank"  href="http://ak.polnep.ac.id/">Akuntansi</a>
-              <a class="dropdown-item" target="_blank"  href="http://pertanian.polnep.ac.id/">Teknologi Pertanian</a>
-              <a class="dropdown-item" target="_blank"  href="http://ikp.polnep.ac.id/">Ilmu Kelautan dan Perikanan</a>
-              <a class="dropdown-item" target="_blank"  href="http://arsitektur.polnep.ac.id/">Teknik Arsitektur</a>
-            </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect rounded" href="{{url('berita')}}">Berita</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect rounded" href="{{url('galeri')}}">Galeri</a>
-            </li>
+            @if($public_menu)
+              @foreach($public_menu as $menu)
+                <li class="nav-item @if($menu['child']) dropdown @endif">
+                  <a href="{{ $menu['link'] }}" title="" class="nav-link @if($menu['child']) dropdown-toggle @endif" @if($menu['child'])  role="button" data-toggle="dropdown" @endif>{{ $menu['label'] }}</a>
+                  @if( $menu['child'] )
+                    <div class="dropdown-menu dropdown-menu-left">
+                      @foreach( $menu['child'] as $child )
+                        <a href="{{ $child['link'] }}" title="" class="dropdown-item">{{ $child['label'] }}</a>
+                      @endforeach
+                    </div><!-- /.sub-menu -->
+                  @endif
+                </li>
+              @endforeach
+            @endif
             <form class="form-inline my-2 my-lg-0 ml-2 active-cyan-4">
               <input class="form-control" type="search" placeholder="Search" aria-label="Search">
               <!-- <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button> -->

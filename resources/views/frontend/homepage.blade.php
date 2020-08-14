@@ -12,31 +12,19 @@
 <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
   <!--Indicators-->
   <ol class="carousel-indicators">
-    <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-    <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+    @foreach ($banners as $ban)
+    <li data-target="#carousel-example-1z" data-slide-to="{{ $ban->id }}" class="active"></li>
+    @endforeach
   </ol>
   <!--/.Indicators-->
   <!--Slides-->
   <div class="carousel-inner" role="listbox">
-    <!--First slide-->
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="http://polnep.ac.id/public/assets/images/bg_slider/bg_slider_779896e9f465bc6cc993ecf1c940a606e1.png"
-        alt="First slide">
+    @foreach ($banners as $ban)
+    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+      <img class="d-block w-100" src="{{asset('storage/galleries/'. $ban->image)}}"
+        alt="slide">
     </div>
-    <!--/First slide-->
-    <!--Second slide-->
-    <div class="carousel-item">
-      <img class="d-block w-100" src="http://polnep.ac.id/public/assets/images/bg_slider/bg_slider_9lapor.png"
-        alt="Second slide">
-    </div>
-    <!--/Second slide-->
-    <!--Third slide-->
-    <div class="carousel-item">
-      <img class="d-block w-100" src="http://polnep.ac.id/public/assets/images/bg_slider/bg_slider_39banner_integritas.jpg"
-        alt="Third slide">
-    </div>
-    <!--/Third slide-->
+    @endforeach
   </div>
   <!--/.Slides-->
   <!--Controls-->
@@ -73,7 +61,7 @@
               <!--Card image-->
               <div class="view overlay">
                 <img src="{{asset('storage/galleries/'.$post->thumbnail)}}" class="card-img-top"
-                  alt="">
+                  alt="Responsive image">
                 <a>
                   <div class="mask rgba-white-slight"></div>
                 </a>

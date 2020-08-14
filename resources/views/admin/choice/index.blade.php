@@ -44,6 +44,7 @@
                             <td>{{$choice->id}}</td>
                             <td>{{$choice->name}}</td>
                             <td>
+                                <a href="{{route('choices.show', $choice->id)}}" class="btn btn-sm btn-secondary"><i class="fa fa-eye"></i></a>
                                 <a href="{{route('choices.edit', $choice->id)}}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                                 {!! Form::open(['route'=>['choices.destroy',$choice->id],'method'=>'delete','style'=>'display:inline']) !!}
                                 {!! Form::button('<i class="fa fa-trash"></i>', ['type'=>'submit','class'=>'btn btn-sm btn-danger']) !!}

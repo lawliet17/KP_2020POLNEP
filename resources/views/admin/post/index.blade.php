@@ -50,6 +50,7 @@
                                 @endforeach
                             </td>
                             <td>
+                                <a href="{{route('posts.show', $post->id)}}" class="btn btn-sm btn-secondary"><i class="fa fa-eye"></i></a>
                                 <a href="{{route('posts.edit', $post->id)}}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                                 {!! Form::open(['route'=>['posts.destroy',$post->id],'method'=>'delete','style'=>'display:inline']) !!}
                                 {!! Form::button('<i class="fa fa-trash"></i>', ['type'=>'submit','class'=>'btn btn-sm btn-danger']) !!}

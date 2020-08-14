@@ -52,6 +52,7 @@
                             {{-- <td>{{$gallery->choices}}</td> --}}
                             <td><img src="{{asset('storage/galleries/'. $gallery->image_url)}}" width="50px" height="50px"></td>
                             <td>
+                                <a href="{{route('galleries.show', $gallery->id)}}" class="btn btn-sm btn-secondary"><i class="fa fa-eye"></i></a>
                                 <a href="{{route('galleries.edit', $gallery->id)}}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                                 {!! Form::open(['route'=>['galleries.destroy',$gallery->id],'method'=>'delete','style'=>'display:inline']) !!}
                                 {!! Form::button('<i class="fa fa-trash"></i>', ['type'=>'submit','class'=>'btn btn-sm btn-danger']) !!}

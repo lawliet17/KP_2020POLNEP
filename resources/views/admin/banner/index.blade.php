@@ -31,7 +31,7 @@
                     <tr>
                         <th scope="col" width="60">No</th>
                         <th scope="col" width="60">Id</th>
-                        <th scope="col" width="60">Name</th>
+                        
                         <th scope="col" width="100">Image</th>
                         <th scope="col" width="200">Aksi</th>
                     </tr>
@@ -43,9 +43,10 @@
                         <tr>
                             <td>{{$no}}</td>
                             <td>{{$banner->id}}</td>
-                            <td>{{$banner->user->name}}</td>
+                            
                             <td><img src="{{asset('storage/galleries/'. $banner->image)}}" width="50px" height="50px"></td>
                             <td>
+                                <a href="{{route('banners.show', $banner->id)}}" class="btn btn-sm btn-secondary"><i class="fa fa-eye"></i></a>
                                 <a href="{{route('banners.edit', $banner->id)}}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                                 {!! Form::open(['route'=>['banners.destroy',$banner->id],'method'=>'delete','style'=>'display:inline']) !!}
                                 {!! Form::button('<i class="fa fa-trash"></i>', ['type'=>'submit','class'=>'btn btn-sm btn-danger']) !!}

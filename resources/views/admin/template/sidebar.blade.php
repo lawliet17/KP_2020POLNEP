@@ -52,6 +52,18 @@
         <span>{{__('Choice')}}</span></a>
     </li>
 
+    <li class="nav-item">
+      <a class="nav-link" href="{{route('banners.index')}}">
+        <i class="fas fa-fw fa-table"></i>
+        <span>{{__('Banner')}}</span></a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="{{route('menu')}}">
+        <i class="fas fa-fw fa-table"></i>
+        <span>{{__('Menu')}}</span></a>
+    </li>
+
     {{-- <li class="nav-item">
       <a class="nav-link" href="tables.html">
         <i class="fas fa-fw fa-table"></i>

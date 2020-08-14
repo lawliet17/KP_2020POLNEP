@@ -33,4 +33,9 @@ class HomeController extends Controller
         $choices = Choice::count();
         return view('admin.index', compact('posts','categories','galleries','choices'));
     }
+
+    public function menu()
+    {
+        return view ('admin.menu.menu');
+    }
 }

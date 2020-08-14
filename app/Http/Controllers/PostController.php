@@ -87,7 +87,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        
+        return view('admin.post.show', ['post'=>Post::find($post)]);   
     }
 
     /**

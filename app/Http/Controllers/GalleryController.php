@@ -77,7 +77,7 @@ class GalleryController extends Controller
      */
     public function show(Gallery $gallery)
     {
-        //
+        return view('admin.gallery.show', ['gallery'=>Gallery::find($gallery)]);
     }
 
     /**

@@ -59,11 +59,13 @@
           <h3 class="mt-3 text-center"><span>CATEGORIES</span></h3>
           <ul class="list-group list-group-flush shadow-5 p-4 mb-4">
               
+              @foreach ($categories as $cat)
               <li><a href="" class="text-muted">
-                Kategori
-                <span class="badge bg-primary rounded-pill float-right">14</span>
+                {{$cat->name}}
+                <span class="badge bg-primary rounded-pill float-right">{{$jumlah_post}}</span>
               </li>
-              
+              @endforeach
+
             </ul>
         </section>
         <!--Section: Sidebar-->
@@ -73,21 +75,9 @@
     <!--Grid row-->
 
     <!-- Pagination -->
-    <nav class="my-4" aria-label="...">
-      <ul class="pagination pagination-circle justify-content-center">
-        <li class="page-item">
-          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item active" aria-current="page">
-          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#">Next</a>
-        </li>
-      </ul>
-    </nav>
+    <div class="pagination pagination-circle justify-content-center" aria-label="...">
+          {{ $posts->links() }}
+    </div>
   </div>
 </main>
 @endsection

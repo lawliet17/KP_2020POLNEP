@@ -73,7 +73,7 @@ class BannerController extends Controller
      */
     public function show(Banner $banner)
     {
-        //
+        return view('admin.banner.show', ['banner'=>Banner::find($banner)]);
     }
 
     /**

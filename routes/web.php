@@ -26,6 +26,7 @@ Route::post('/contact','FrontController@submitContact')->name('contact.submit');
 //  Admin
 Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/menu', 'HomeController@menu')->name('menu');
     Route::resource('categories','CategoryController');
     Route::resource('posts','PostController');
     Route::resource('pages','PageController');
