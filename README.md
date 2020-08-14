@@ -10,3 +10,12 @@
    Kerja Praktek 2020
    Proyek membangun web berbasis framework laravel untuk memenuhi Mata kuliah Kerja praktek pada semester 7 prodi sistem informasi universitas tanjungpura
    Studi Kasus Politeknik Negeri Pontianak
+
+Status :
++Berita
++Galeri
++Banner
++Menu Dinamis
+
+Dalam Pengerjaan :
++Multi-Language (ID/EN)
