@@ -44,7 +44,11 @@
                             <td>{{$choice->id}}</td>
                             <td>{{$choice->name}}</td>
                             <td>
+<<<<<<< HEAD
+                                {{-- <a href="{{route('choices.show', $choice->id)}}" class="btn btn-sm btn-secondary"><i class="fa fa-eye"></i></a> --}}
+=======
                                 <a href="{{route('choices.show', $choice->id)}}" class="btn btn-sm btn-secondary"><i class="fa fa-eye"></i></a>
+>>>>>>> d2845400c0bd6ba242301f27900d44c94223636f
                                 <a href="{{route('choices.edit', $choice->id)}}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                                 {!! Form::open(['route'=>['choices.destroy',$choice->id],'method'=>'delete','style'=>'display:inline']) !!}
                                 {!! Form::button('<i class="fa fa-trash"></i>', ['type'=>'submit','class'=>'btn btn-sm btn-danger']) !!}

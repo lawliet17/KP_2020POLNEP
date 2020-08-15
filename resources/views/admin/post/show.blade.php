@@ -27,6 +27,26 @@
         
         <div class="card-body">
             <table class="table table bordered mb-0">
+<<<<<<< HEAD
+                
+                <tbody>
+                        <tr>
+                            <th scope="row">Judul</th>                           
+                            <td>{{$post->title}}</td>
+                        </tr>
+                        <tr>    
+                            <th scope="row">Kategori</th>                        
+                            <td>
+                                @foreach($post->categories as $h)
+                                {{ $h->name }},
+                                @endforeach
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Gambar</th>
+                            <td><img src="{{asset('storage/galleries/'. $post->thumbnail)}}" width="300px" height="300px"></td>
+                        </tr>                                            
+=======
                 <thead>
                     <tr>
                         <th scope="col" width="60">No</th>
@@ -53,6 +73,7 @@
                             <td><img src="{{asset('storage/galleries/'. $pt->thumbnail)}}" width="50px" height="50px"></td>
                         </tr>
                     @endforeach
+>>>>>>> d2845400c0bd6ba242301f27900d44c94223636f
                 </tbody>
             </table>
         </div>

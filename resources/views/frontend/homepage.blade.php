@@ -21,7 +21,11 @@
   <div class="carousel-inner" role="listbox">
     @foreach ($banners as $ban)
     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+<<<<<<< HEAD
+      <img class="d-block w-100" style="width: 300px;height:300px" src="{{asset('storage/galleries/'. $ban->image)}}"
+=======
       <img class="d-block w-100" src="{{asset('storage/galleries/'. $ban->image)}}"
+>>>>>>> d2845400c0bd6ba242301f27900d44c94223636f
         alt="slide">
     </div>
     @endforeach

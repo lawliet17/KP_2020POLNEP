@@ -26,6 +26,19 @@
         </div>
         
         <div class="card-body">
+<<<<<<< HEAD
+            <table class="table table bordered mb-0">                
+                <tbody>                    
+                        <tr>
+                            <th scope="row">Id</th>
+                            <td>{{$banner->id}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Gambar</th>
+                            <td><img src="{{asset('storage/galleries/'. $banner->image)}}" width="200px" height="200px"></td>                           
+                        </tr>
+                   
+=======
             <table class="table table bordered mb-0">
                 <thead>
                     <tr>
@@ -48,6 +61,7 @@
                            
                         </tr>
                     @endforeach
+>>>>>>> d2845400c0bd6ba242301f27900d44c94223636f
                 </tbody>
             </table>
         </div>

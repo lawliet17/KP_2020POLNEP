@@ -26,6 +26,26 @@
         </div>
         
         <div class="card-body">
+<<<<<<< HEAD
+            <table class="table table bordered mb-0">            
+                <tbody>                    
+                        <tr> 
+                            <th scope="row">Id</th>
+                            <td>{{$gallery->id}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kategori</th>
+                            <td>
+                                @foreach($gallery->choices as $h)
+                                {{ $h->name }}
+                                @endforeach
+                            </td>
+                        </tr>                    
+                        <tr>
+                            <th scope="row">Gambar</th>
+                            <td><img src="{{asset('storage/galleries/'. $gallery->image_url)}}" width="300px" height="300px"></td>
+                        </tr>                                                                                                    
+=======
             <table class="table table bordered mb-0">
                 <thead>
                     <tr>
@@ -54,6 +74,7 @@
                             
                         </tr>
                     @endforeach
+>>>>>>> d2845400c0bd6ba242301f27900d44c94223636f
                 </tbody>
             </table>
         </div>
