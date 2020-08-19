@@ -12,6 +12,7 @@
    Studi Kasus Politeknik Negeri Pontianak
 <br>
 Status :
+<br>
 +Berita
 <br>
 +Galeri
