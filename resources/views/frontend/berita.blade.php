@@ -15,20 +15,38 @@
             <div class="col-md-4 mb-4">
               <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-ripple-color="light">
                 <img src="{{asset('storage/galleries/'.$post->thumbnail)}}" class="img-fluid">
-                <a href="{{url('post/'. $post->id)}}">
+                @if ( Config::get('app.locale') == 'id')
+                <a href="{{url('post/'. $post->id_slug)}}">
+                @elseif ( Config::get('app.locale') == 'en')
+                <a href="{{url('post/'. $post->en_slug)}}">
+                @endif
                   <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                 </a>
               </div>
             </div>
 
               <div class="col-md-8 mb-4">
-              <a href="{{url('post/'. $post->id)}}">
-                <h5>{{$post->title}}</h5>
+                @if ( Config::get('app.locale') == 'id')
+                <a href="{{url('post/'. $post->id_slug)}}">
+                @elseif ( Config::get('app.locale') == 'en')
+                <a href="{{url('post/'. $post->en_slug)}}">
+                @endif
+                <h5>
+                @if ( Config::get('app.locale') == 'id')
+                  {{$post->id_title}}
+                @elseif ( Config::get('app.locale') == 'en')
+                  {{$post->en_title}}
+                @endif
+                </h5>
               </a>
               <!-- Excerpt -->
-          <p class="dark-grey-text">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit
-            quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus
-            et aut officiis cum soluta nobis est eligendi placeat facere aut rerum.</p>
+          <p class="dark-grey-text text-justify">
+            @if ( Config::get('app.locale') == 'id')
+            {{ Str::limit($post->id_details, 200) }}
+            @elseif ( Config::get('app.locale') == 'en')
+            {{ Str::limit($post->en_details, 200) }}
+            @endif
+          </p>
               <div class="row mb-3">
                 <div class="col-6">
                   @foreach($post->categories as $category)

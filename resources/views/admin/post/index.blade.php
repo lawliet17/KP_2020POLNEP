@@ -31,7 +31,8 @@
                     <tr>
                         <th scope="col" width="60">No</th>
                         <th scope="col" width="60">Id</th>
-                        <th scope="col" width="60">Title</th>
+                        <th scope="col" width="60">id_Title</th>
+                        <th scope="col" width="60">en_Title</th>
                         <th scope="col" width="60">Category</th>
                         <th scope="col" width="200">Aksi</th>
                     </tr>
@@ -43,7 +44,8 @@
                         <tr>
                             <td>{{$no}}</td>
                             <td>{{$post->id}}</td>
-                            <td>{{$post->title}}</td>
+                            <td>{{$post->id_title}}</td>
+                            <td>{{$post->en_title}}</td>
                             <td>
                                 @foreach($post->categories as $h)
                                 {{ $h->name }}

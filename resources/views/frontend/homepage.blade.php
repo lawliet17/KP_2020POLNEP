@@ -21,11 +21,8 @@
   <div class="carousel-inner" role="listbox">
     @foreach ($banners as $ban)
     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-<<<<<<< HEAD
-      <img class="d-block w-100" style="width: 300px;height:300px" src="{{asset('storage/galleries/'. $ban->image)}}"
-=======
+
       <img class="d-block w-100" src="{{asset('storage/galleries/'. $ban->image)}}"
->>>>>>> d2845400c0bd6ba242301f27900d44c94223636f
         alt="slide">
     </div>
     @endforeach
@@ -76,12 +73,22 @@
               <div class="card-body text-justify">
                 <!--Category & Title-->
                 <a href="{{url('post/'. $post->id)}}" class="dark-grey-text">
-                  <h5>{{$post->title}}</h5>
+                  <h5>
+                    @if ( Config::get('app.locale') == 'id')
+                      {{$post->id_title}}
+                    @elseif ( Config::get('app.locale') == 'en')
+                      {{$post->en_title}}
+                    @endif
+                  </h5>
                 </a>
                     <!-- Excerpt -->
-          <p class="dark-grey-text">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit
-            quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus
-            et aut officiis cum soluta nobis est eligendi placeat facere aut rerum.</p>
+              <p class="dark-grey-text">
+                @if ( Config::get('app.locale') == 'id')
+                {{ Str::limit($post->id_details, 100) }}
+                @elseif ( Config::get('app.locale') == 'en')
+                {{ Str::limit($post->en_details, 100) }}
+                @endif
+              </p>
                   <!-- Article data -->
               <div class="row mb-3">
                 <div class="col-6 text-left">

@@ -17,8 +17,12 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('thumbnail')->nullable();
-            $table->string('title')->unique();
-            $table->text('details');
+            $table->string('id_title')->unique();
+            $table->string('en_title')->unique();
+            $table->string('id_slug')->unique();
+            $table->string('en_slug')->unique();
+            $table->text('id_details');
+            $table->text('en_details');
             $table->string('post_type')->nullable();
             $table->enum('is_published',['1','0']);
             $table->timestamps();

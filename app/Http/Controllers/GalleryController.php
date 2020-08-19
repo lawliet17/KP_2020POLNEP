@@ -75,16 +75,10 @@ class GalleryController extends Controller
      * @param  \App\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
-    public function show($id)
-    {
-        $gallery = Gallery::find($id);
-        return view('admin.gallery.show',compact('gallery'));
-=======
+
     public function show(Gallery $gallery)
     {
         return view('admin.gallery.show', ['gallery'=>Gallery::find($gallery)]);
->>>>>>> d2845400c0bd6ba242301f27900d44c94223636f
     }
 
     /**

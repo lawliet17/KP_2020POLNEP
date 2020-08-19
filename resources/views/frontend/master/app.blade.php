@@ -158,57 +158,6 @@
     }
 
     /* Switch 3 Specific Style End */
-
-    .onoffswitch1 {
-        position: relative; width: 50px; height: 25px;
-        -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
-    }
-
-    .onoffswitch1-checkbox {
-        display: none;
-    }
-
-    .onoffswitch1-label {
-        display: block; overflow: hidden; cursor: pointer;
-        border: 2px solid #999999; border-radius: 30px;
-    }
-
-    .onoffswitch1-inner {
-        display: block; width: 200%; margin-left: -100%;
-        -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
-        -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
-    }
-
-    .onoffswitch1-inner:before, .onoffswitch1-inner:after {
-        display: block; float: left; width: 50%; height: 20px; padding: 0; line-height: 20px;
-        font-size: 12px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
-        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-        border-radius: 25px;
-        box-shadow: 0px 15px 0px rgba(0,0,0,0.08) inset;
-    }
-
-    .onoffswitch1-inner:before {
-        content: "ID";
-        padding-left: 10px;
-        background-color: #2FCCFF; color: #FFFFFF;
-        border-radius: 10px 0 0 10px;
-    }
-
-    .onoffswitch1-inner:after {
-        content: "EN";
-        padding-right: 10px;
-        background-color: #2FCCFF; color: #FFFFFF;
-        text-align: right;
-        border-radius: 0 10px 10px 0;
-    }
-
-    .onoffswitch1-checkbox:checked + .onoffswitch1-label .onoffswitch1-inner {
-        margin-left: 0;
-    }
-
-    .onoffswitch1-checkbox:checked + .onoffswitch1-label .onoffswitch1-switch {
-        right: 0px; 
-    }
   </style>
   </head>
   <body>

@@ -7,6 +7,7 @@ use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -41,24 +42,33 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'title' => 'required:unique:posts',
+            'id_title' => 'required:unique:posts',
+            'en_title' => 'required:unique:posts',
             'thumbnail' => 'required',
-            'details' => 'required',
+            'id_details' => 'required',
+            'en_details' => 'required',
             'category_id' => 'required'
         ],
             [
-                'title.required' => 'Masukkan title',
-                'title.unique' => 'Judul harus berbeda',
+                'id_title.required' => 'Masukkan title',
+                'en_title.required' => 'Inser Title',
+                'id_title.unique' => 'Judul harus berbeda',
+                'en_title.unique' => 'Title must different',
                 'thumbnail.required' => 'Harus diisi',
-                'details.required' => 'Harus diisi',
+                'id_details.required' => 'Harus diisi',
+                'en_details.required' => 'Must filled',
                 'category_id.required' => 'Pilih kategori'
             ]
         );
 
         $post = new Post();
         $post->user_id = Auth::id();
-        $post->title = $request->title;
-        $post->details = $request->details;
+        $post->id_title = $request->id_title;
+        $post->en_title = $request->en_title;
+        $post->id_slug = Str::slug($request->get('id_title'));
+        $post->en_slug = Str::slug($request->get('en_title'));
+        $post->id_details = $request->id_details;
+        $post->en_details = $request->en_details;
         $post->is_published = $request->is_published;
         $post->post_type = 'post';
         
@@ -85,16 +95,10 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
-    public function show($id)
-    {
-        $post = Post::find($id);
-        return view('admin.post.show', compact('post'));   
-=======
+    
     public function show(Post $post)
     {
         return view('admin.post.show', ['post'=>Post::find($post)]);   
->>>>>>> d2845400c0bd6ba242301f27900d44c94223636f
     }
 
     /**

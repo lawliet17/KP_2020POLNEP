@@ -47,14 +47,16 @@
           </ul>
         </div>
         <ul class="navbar-nav nav-flex-icons">
-          <li class="nav-item">
-            <div class="onoffswitch1">
-              <input type="checkbox" name="onoffswitch1" class="onoffswitch1-checkbox" id="myonoffswitch1" checked>
-              <label class="onoffswitch1-label" for="myonoffswitch1">
-                  <span class="onoffswitch1-inner"></span>
-              </label>
-              </div>
-          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                @lang("lang.switcher")
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item {{ app()->getLocale() == 'id' ? 'active' : '' }}" href="{{ route('localization.switch', 'id') }}">Bahasa Indonesia</a>
+                <a class="dropdown-item {{ app()->getLocale() == 'en' ? 'active' : '' }}" href="{{ route('localization.switch', 'en') }}">English</a>
+            </div>
+        </li>
           <li class="nav-item">
               <div class="toggle_switch">
                 <input type="checkbox" class="switch_dark">

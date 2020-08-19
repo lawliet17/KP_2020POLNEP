@@ -123,6 +123,10 @@ class ComposerStaticInitbb4081a279f35545810687fb96ae724b
             'Laravel\\Ui\\' => 11,
             'Laravel\\Tinker\\' => 15,
         ),
+        'J' => 
+        array (
+            'JoeDixon\\Translation\\' => 21,
+        ),
         'I' => 
         array (
             'Illuminate\\Foundation\\Auth\\' => 27,
@@ -379,6 +383,10 @@ class ComposerStaticInitbb4081a279f35545810687fb96ae724b
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'JoeDixon\\Translation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/joedixon/laravel-translation/src',
+        ),
         'Illuminate\\Foundation\\Auth\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/ui/auth-backend',
@@ -520,6 +528,7 @@ class ComposerStaticInitbb4081a279f35545810687fb96ae724b
         'App\\Http\\Controllers\\FrontController' => __DIR__ . '/../..' . '/app/Http/Controllers/FrontController.php',
         'App\\Http\\Controllers\\GalleryController' => __DIR__ . '/../..' . '/app/Http/Controllers/GalleryController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\LocalizationController' => __DIR__ . '/../..' . '/app/Http/Controllers/LocalizationController.php',
         'App\\Http\\Controllers\\PageController' => __DIR__ . '/../..' . '/app/Http/Controllers/PageController.php',
         'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
         'App\\Http\\Controllers\\WebsiteController' => __DIR__ . '/../..' . '/app/Http/Controllers/WebsiteController.php',
@@ -527,6 +536,7 @@ class ComposerStaticInitbb4081a279f35545810687fb96ae724b
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
+        'App\\Http\\Middleware\\LocalizationMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/LocalizationMiddleware.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
@@ -2419,6 +2429,32 @@ class ComposerStaticInitbb4081a279f35545810687fb96ae724b
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+        'JoeDixon\\Translation\\Console\\Commands\\AddLanguageCommand' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Console/Commands/AddLanguageCommand.php',
+        'JoeDixon\\Translation\\Console\\Commands\\AddTranslationKeyCommand' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Console/Commands/AddTranslationKeyCommand.php',
+        'JoeDixon\\Translation\\Console\\Commands\\BaseCommand' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Console/Commands/BaseCommand.php',
+        'JoeDixon\\Translation\\Console\\Commands\\ListLanguagesCommand' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Console/Commands/ListLanguagesCommand.php',
+        'JoeDixon\\Translation\\Console\\Commands\\ListMissingTranslationKeys' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Console/Commands/ListMissingTranslationKeys.php',
+        'JoeDixon\\Translation\\Console\\Commands\\SynchroniseMissingTranslationKeys' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Console/Commands/SynchroniseMissingTranslationKeys.php',
+        'JoeDixon\\Translation\\Console\\Commands\\SynchroniseTranslationsCommand' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Console/Commands/SynchroniseTranslationsCommand.php',
+        'JoeDixon\\Translation\\ContractDatabaseLoader' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/ContractDatabaseLoader.php',
+        'JoeDixon\\Translation\\Drivers\\Database' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Drivers/Database.php',
+        'JoeDixon\\Translation\\Drivers\\DriverInterface' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Drivers/DriverInterface.php',
+        'JoeDixon\\Translation\\Drivers\\File' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Drivers/File.php',
+        'JoeDixon\\Translation\\Drivers\\Translation' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Drivers/Translation.php',
+        'JoeDixon\\Translation\\Exceptions\\LanguageExistsException' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Exceptions/LanguageExistsException.php',
+        'JoeDixon\\Translation\\Exceptions\\LanguageKeyExistsException' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Exceptions/LanguageKeyExistsException.php',
+        'JoeDixon\\Translation\\Http\\Controllers\\LanguageController' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Http/Controllers/LanguageController.php',
+        'JoeDixon\\Translation\\Http\\Controllers\\LanguageTranslationController' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Http/Controllers/LanguageTranslationController.php',
+        'JoeDixon\\Translation\\Http\\Requests\\LanguageRequest' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Http/Requests/LanguageRequest.php',
+        'JoeDixon\\Translation\\Http\\Requests\\TranslationRequest' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Http/Requests/TranslationRequest.php',
+        'JoeDixon\\Translation\\InterfaceDatabaseLoader' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/InterfaceDatabaseLoader.php',
+        'JoeDixon\\Translation\\Language' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Language.php',
+        'JoeDixon\\Translation\\Rules\\LanguageNotExists' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Rules/LanguageNotExists.php',
+        'JoeDixon\\Translation\\Scanner' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Scanner.php',
+        'JoeDixon\\Translation\\Translation' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/Translation.php',
+        'JoeDixon\\Translation\\TranslationBindingsServiceProvider' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/TranslationBindingsServiceProvider.php',
+        'JoeDixon\\Translation\\TranslationManager' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/TranslationManager.php',
+        'JoeDixon\\Translation\\TranslationServiceProvider' => __DIR__ . '/..' . '/joedixon/laravel-translation/src/TranslationServiceProvider.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
@@ -3574,6 +3610,7 @@ class ComposerStaticInitbb4081a279f35545810687fb96ae724b
         'PhpParser\\Parser\\Tokens' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Parser/Tokens.php',
         'PhpParser\\PrettyPrinterAbstract' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/PrettyPrinterAbstract.php',
         'PhpParser\\PrettyPrinter\\Standard' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/PrettyPrinter/Standard.php',
+        'PostSeeder' => __DIR__ . '/../..' . '/database/seeds/PostSeeder.php',
         'Prophecy\\Argument' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument.php',
         'Prophecy\\Argument\\ArgumentsWildcard' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument/ArgumentsWildcard.php',
         'Prophecy\\Argument\\Token\\AnyValueToken' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValueToken.php',

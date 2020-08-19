@@ -33,9 +33,9 @@ class FrontController extends Controller
         return view('frontend.berita', compact('categories','posts','public_menu','jumlah_post'));
     }
 
-    public function post($id)
+    public function post($slug)
     {
-        $post = Post::where('id', $id)->where('post_type','post')->where('is_published','1')->first();
+        $post = Post::where('id_slug', $slug)->where('post_type','post')->where('is_published','1')->first();
         $public_menu = Menu::getByName('default-menu');
         if($post)
         {

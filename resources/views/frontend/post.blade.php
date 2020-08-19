@@ -29,13 +29,23 @@
               <div class="card-body">
 
                 <div class="post-heading">
-                  <h3>{{$post->title}}</h3>
+                  <h3> 
+                  @if ( Config::get('app.locale') == 'id')
+                    {{$post->id_title}}
+                  @elseif ( Config::get('app.locale') == 'en')
+                    {{$post->en_title}}
+                  @endif
+                </h3>
                   <span class="meta">Posted by
                     <a href="#">{{$post->user->name}}</a>
                     on {{date('M d, Y', strtotime($post->created_at))}}</span>
                 </div>
                 <br>
-                {!! $post->details!!}
+                @if ( Config::get('app.locale') == 'id')
+                {{($post->id_details)}}
+                @elseif ( Config::get('app.locale') == 'en')
+                {{($post->en_details)}}
+                @endif
               </div>
 
             </div>

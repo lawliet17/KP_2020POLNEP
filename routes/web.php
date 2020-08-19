@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-
+Route::get('lang/{language}', 'LocalizationController@switch')->name('localization.switch');
 
 Route::get('/page/{id}','FrontController@page')->name('page');
 Route::get('/contact','FrontController@showContact')->name('contact.show');
@@ -42,7 +42,7 @@ Route::get('/', 'FrontController@index')->name('homepage');
 
 Route::get('/berita','FrontController@news')->name('news');
 Route::get('/category/{id}','FrontController@category')->name('category');
-Route::get('/post/{id}','FrontController@post')->name('post');
+Route::get('/post/{slug}','FrontController@post')->name('post');
 
 Route::get('/galeri','FrontController@gallery')->name('galery.index');
 Route::get('/choice/{id}','FrontController@showGallery')->name('galeri.show');
