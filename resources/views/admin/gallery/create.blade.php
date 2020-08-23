@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="card">
-        <div class="card-header">Create Gallery
+        <div class="card-header">{{__('Create')}} {{__('Gallery')}}
         </div>
         
         <div class="card-body">
@@ -37,13 +37,3 @@
   </div>    
 @endsection
 
-{{-- @section('create-galleries')
-<script>
-    $(document).ready(function() {
-      
-    $('#choice_id').select2({
-      placeholder : "Select Categories"
-    });
-  });
-  </script>
-@endsection --}}

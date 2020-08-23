@@ -15,7 +15,7 @@
     <li class="nav-item active">
       <a class="nav-link" href="{{route('home')}}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span></a>
+        <span>{{__('Dashboard')}}</span></a>
     </li>
 
     <!-- Divider -->
@@ -23,27 +23,27 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-      Interface
+      {{__('Interface')}}
     </div>    
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
       <a class="nav-link" href="{{route('posts.index')}}">
         <i class="fas fa-fw fa-table"></i>
-        <span>{{__('Posts')}}</span></a>
+        <span>{{__('Post')}}</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
       <a class="nav-link" href="{{route('categories.index')}}">
         <i class="fas fa-fw fa-table"></i>
-        <span>{{__('Category Posts')}}</span></a>
+        <span>{{__('Category')}}</span></a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link" href="{{route('galleries.index')}}">
         <i class="fas fa-fw fa-table"></i>
-        <span>{{__('Galleries')}}</span></a>
+        <span>{{__('Gallery')}}</span></a>
     </li>
 
     <li class="nav-item">
@@ -63,12 +63,6 @@
         <i class="fas fa-fw fa-table"></i>
         <span>{{__('Menu')}}</span></a>
     </li>
-
-    {{-- <li class="nav-item">
-      <a class="nav-link" href="tables.html">
-        <i class="fas fa-fw fa-table"></i>
-        <span>{{__('Pages')}}</span></a>
-    </li> --}}
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

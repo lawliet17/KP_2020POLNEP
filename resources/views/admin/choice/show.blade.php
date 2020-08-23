@@ -21,7 +21,7 @@
     </div>
 
     <div class="card">
-        <div class="card-header">Choice
+        <div class="card-header">{{__('Choice')}}
             
         </div>
         

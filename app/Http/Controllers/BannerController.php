@@ -17,7 +17,7 @@ class BannerController extends Controller
      */
     public function index()
     {
-        $banners = Banner::orderBy('id','DESC')->get();
+        $banners = Banner::orderBy('id','DESC')->paginate(5);
         return view ('admin.banner.index',compact('banners'));
     }
 
@@ -71,16 +71,10 @@ class BannerController extends Controller
      * @param  \App\Banner  $banner
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
     public function show($id)
     {
         $banner = Banner::find($id);
         return view('admin.banner.show', compact('banner'));
-=======
-    public function show(Banner $banner)
-    {
-        return view('admin.banner.show', ['banner'=>Banner::find($banner)]);
->>>>>>> d2845400c0bd6ba242301f27900d44c94223636f
     }
 
     /**

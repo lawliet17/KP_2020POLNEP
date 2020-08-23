@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="card">
-        <div class="card-header">Edit Gallery
+        <div class="card-header">{{__('Edit')}} {{__('Gallery')}}
         </div>
         
         <div class="card-body">
@@ -40,13 +40,3 @@
   </div>    
 @endsection
 
-{{-- @section('edit-galleries')
-    <script>
-        $(document).ready(function() {
-      
-    $('#choice_id3').select2({
-      placeholder : "Select Categories"
-    }).val({!!json_encode($gallery->choices()->allRelatedIds())!!}).trigger('change');
-  });
-    </script>
-@endsection --}}

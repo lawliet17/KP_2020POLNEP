@@ -40,7 +40,7 @@
                 </h5>
               </a>
               <!-- Excerpt -->
-          <p class="dark-grey-text text-justify">
+          <p class="text-justify">
             @if ( Config::get('app.locale') == 'id')
             {{ Str::limit($post->id_details, 200) }}
             @elseif ( Config::get('app.locale') == 'en')

@@ -18,7 +18,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('id','DESC')->where('post_type','post')->get();
+        $posts = Post::orderBy('id','DESC')->where('post_type','post')->paginate(5);
         return view ('admin.post.index',compact('posts'));
     }
 
@@ -69,7 +69,6 @@ class PostController extends Controller
         $post->en_slug = Str::slug($request->get('en_title'));
         $post->id_details = $request->id_details;
         $post->en_details = $request->en_details;
-        $post->is_published = $request->is_published;
         $post->post_type = 'post';
         
         if ($request->hasFile('thumbnail')) {
@@ -96,9 +95,10 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-    public function show(Post $post)
+    public function show($id)
     {
-        return view('admin.post.show', ['post'=>Post::find($post)]);   
+        $post = Post::find($id);
+        return view('admin.post.show', compact('post'));
     }
 
     /**
@@ -123,24 +123,30 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $this->validate($request,[
-            'title' => 'required:unique:posts,'. $post->id . ',id',
+            'en_title' => 'required:unique:posts,'. $post->id . ',id',
+            'id_title' => 'required:unique:posts,'. $post->id . ',id',
             'thumbnail' => 'required',
-            'details' => 'required',
+            'en_details' => 'required',
+            'id_details' => 'required',
             'category_id' => 'required'
         ],
             [
-                'title.required' => 'Masukkan title',
-                'title.unique' => 'Judul harus berbeda',
+                'en_title.required' => 'Input title',
+                'en_title.unique' => 'Title be unique',                
+                'en_details.required' => 'Tittle harus diisi',
+                'id_title.required' => 'Masukkan title',
+                'id_title.unique' => 'Judul harus berbeda',
                 'thumbnail.required' => 'Harus diisi',
-                'details.required' => 'Harus diisi',
+                'id_details.required' => 'Harus diisi',
                 'category_id.required' => 'Pilih kategori'
             ]
         );
 
         $post->user_id = Auth::id();
-        $post->title = $request->title;
-        $post->details = $request->details;
-        $post->is_published = $request->is_published;
+        $post->en_title = $request->en_title;
+        $post->en_details = $request->en_details;
+        $post->id_title = $request->id_title;
+        $post->id_details = $request->id_details;
         $post->post_type = 'post';
 
         if ($request->hasFile('thumbnail')) {

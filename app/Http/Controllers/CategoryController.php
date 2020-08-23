@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
+Use Alert;
 
 class CategoryController extends Controller
 {
@@ -41,19 +42,16 @@ class CategoryController extends Controller
     {
         $this->validate($request, [
             'name' =>'required|unique:categories',
-        ],
-            [
-                'name.required' =>'Enter name',
-                'name.unique' => 'Nama telah ada',
-            ]);
+            'nama' =>'required|unique:categories',
+        ]);
 
             $category = new Category();
             $category->name = $request->name;
+            $category->nama = $request->nama;
             $category->user_id = Auth::id();
-            $category->is_published = $request->is_published;
             $category->save();
         
-        Session::flash('message','Berhasil ditambahkan');
+        
         return redirect ()->route('categories.index');
     }
 
@@ -90,15 +88,18 @@ class CategoryController extends Controller
     {
         $this->validate($request, [
             'name' =>'required|unique:categories,name,' .$category->id,
+            'nama' =>'required|unique:categories,nama,' .$category->id,
         ],
             [
                 'name.required' =>'Enter name',
                 'name.unique' => 'Nama telah ada',
+                'nama.required' =>'Enter name',
+                'nama.unique' => 'Nama telah ada',
             ]);
 
         $category->name = $request->name;
+        $category->nama = $request->nama;
         $category->user_id = Auth::id();
-        $category->is_published = $request->is_published;
         $category->save();
         
         Session::flash('message','Berhasil diubah');

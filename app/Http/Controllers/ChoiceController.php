@@ -17,7 +17,7 @@ class ChoiceController extends Controller
      */
     public function index()
     {
-        $choices = Choice::orderBy('id','ASC')->get();
+        $choices = Choice::orderBy('id','ASC')->paginate(5);
         return view ('admin.choice.index',compact('choices'));
     }
 

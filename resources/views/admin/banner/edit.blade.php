@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="card">
-        <div class="card-header">Edit Banner
+        <div class="card-header">{{__('Edit')}} {{__('Banner')}}
         </div>
         
         <div class="card-body">

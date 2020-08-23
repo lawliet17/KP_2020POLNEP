@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="card">
-        <div class="card-header">Create Post
+        <div class="card-header">{{__('Create')}} {{__('Post')}}
         </div>
         
         <div class="card-body">
@@ -68,10 +68,7 @@
                 @endif
             </div>
 
-            <div class="form-group">
-                {!! Form::label('Published') !!}
-                {!! Form::select('is_published',[1=>'publish',0=>'draft'],null,['class'=>'form-control']) !!}
-            </div>
+            
             {!! Form::submit('Create', ['class'=>'btn btn-sm btn-primary']) !!}
             {!! Form::close() !!}
         </div>
@@ -79,7 +76,7 @@
   </div>    
 @endsection
 
-@section('create-post')
+@push('create-post')
 <script>
     $(document).ready(function() {
       CKEDITOR.replace('id_details');
@@ -90,4 +87,4 @@
     });
   });
   </script>
-@endsection
+@endpush

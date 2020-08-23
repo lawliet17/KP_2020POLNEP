@@ -1,21 +1,21 @@
-<footer style="background-color: rgba(0, 0, 0, 0.2);">
+<footer style="background-color: rgba(0, 0, 0, 0.164);">
   <div class="container p-4">
     <div class="row">
       <div class="col-sm-6">
-          <section class="widget">
-              <img alt="" src="http://polnep.ac.id/public/assets/images/theme/logotop.png" style="height: 40px; margin-bottom: 20px;">
-              <p class="pull-bottom-small text-justify">
-                  Politeknik Negeri Pontianak (POLNEP) merupakan sistem Pendidikan Tinggi jalur profesional yang menekankan penguasaan dan pengembangan Ilmu Pengetahuan dan Teknologi untuk mendukung era industrialisasi.
-              </p>
-              <p>
-                  <a href="/profil">Selengkapnya →</a>
-              </p>
+          <section class="widget wow fadeInLeft">
+              <!--Google map-->
+<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 200px">
+  <iframe src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=Politeknik%20Negeri%20Pontianak+(Politeknik%20Negeri%20Pontianak)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" frameborder="0"
+  style="border:0" allowfullscreen></iframe>
+</div>
+
+<!--Google Maps-->
           </section>
       </div>
       <div class="col-sm-6">
-          <section class="widget">
+          <section class="widget wow fadeInRight">
               <div class="text-center">
-                  <h3>Alamat</h3>
+                  <h3>Kontak</h3>
               </div>
               <hr>
               <div class="footer-contact-info">
@@ -46,25 +46,10 @@
     </div>
   </div>
     <!-- Copyright -->
-    <div class="p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+    <div class="p-4" style="background-color: rgba(0, 0, 0, 0.11);">
       <div class="container">
-      © 2020
-      <a class="text-dark" href="#">POLITEKNIK NEGERI PONTIANAK</a>
-      <div class="clearfix float-right">
-<!-- Facebook -->
-      <a style="color: #db150b;" href="#!" role="button" target="_blank" class="p-2"
-        ><i class="fab fa-youtube fa-lg"></i></a>
-      <!-- Facebook -->
-      <a style="color: #3b5998;" href="#!" role="button" target="_blank" class="p-2"
-        ><i class="fab fa-facebook fa-lg"></i></a>
-      <!-- Twitter -->
-      <a style="color: #55acee;" href="#!" role="button" target="_blank" class="p-2"
-        ><i class="fab fa-twitter fa-lg"></i></a>
-      <!-- Instagram -->
-      <a style="color: #ac2bac;" href="#!" role="button" target="_blank" class="p-2"
-        ><i class="fab fa-instagram fa-lg"></i></a>
-
-      </div>
+        <b>© 2020</b>
+      <a href="#"><b>POLITEKNIK NEGERI PONTIANAK</b></a>
       </div>
     </div>
     <!-- Copyright -->

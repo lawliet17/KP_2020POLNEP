@@ -17,25 +17,34 @@ class FrontController extends Controller
 {
     public function index()
     {
-        $categories = Category::orderBy('name','ASC')->where('is_published','1')->get();
-        $posts = Post::orderBy('id','DESC')->where('post_type','post')->where('is_published','1')->paginate(3);
+        $categories = Category::orderBy('name','ASC')->get();
+        $posts = Post::orderBy('id','DESC')->where('post_type','post')->paginate(3);
         $banners = Banner::orderBy('id','ASC')->get();
         $public_menu = Menu::getByName('default-menu');
         return view('frontend.homepage', compact('categories','posts','banners','public_menu'));
     }
 
+    public function profile()
+    {
+        $public_menu = Menu::getByName('default-menu');
+        return view('frontend.profil', compact('public_menu'));
+    }
+
     public function news()
     {
-        $categories = Category::orderBy('name','ASC')->where('is_published','1')->get();
-        $posts = Post::orderBy('id','DESC')->where('post_type','post')->where('is_published','1')->paginate(2);
-        $jumlah_post = CategoryPost::where('category_id','1')->count();
+        $categories = Category::orderBy('name','ASC')->get();
+        $posts = Post::orderBy('id','DESC')->where('post_type','post')->paginate(2);
+        $jumlah_post = CategoryPost::where('category_id',1)->count();
         $public_menu = Menu::getByName('default-menu');
         return view('frontend.berita', compact('categories','posts','public_menu','jumlah_post'));
     }
 
     public function post($slug)
     {
-        $post = Post::where('id_slug', $slug)->where('post_type','post')->where('is_published','1')->first();
+        $post = Post::where('id_slug', $slug)
+        ->orWhere('en_slug', $slug)
+        ->where('post_type','post')->first();
+
         $public_menu = Menu::getByName('default-menu');
         if($post)
         {
@@ -48,11 +57,11 @@ class FrontController extends Controller
 
     public function category($id)
     {
-        $category = Category::where('id', $id)->where('is_published','1')->first();
+        $category = Category::where('id', $id)->first();
         $public_menu = Menu::getByName('default-menu');
         if($category)
         {
-            $posts= $category->posts()->orderBy('posts.id','DESC')->where('is_published','1')->paginate(5);
+            $posts= $category->posts()->orderBy('posts.id','DESC')->paginate(5);
             return view('frontend.kategori',compact('category','posts','public_menu'));
         } else
         {
@@ -63,14 +72,14 @@ class FrontController extends Controller
     public function gallery()
     {
         $choices = Choice::orderBy('name','ASC')->get();
-        $galleries = Gallery::orderBy('id','DESC')->paginate(6);
+        $galleries = Gallery::get()->first();
         $public_menu = Menu::getByName('default-menu');
         return view ('frontend.galeri',compact('galleries','choices','public_menu'));
     }
 
-    public function showGallery($id)
+    public function showGallery($name)
     {
-        $choice = Choice::where('id', $id)->first();
+        $choice = Choice::where('name', $name)->first();
         $public_menu = Menu::getByName('default-menu');
         if($choice)
         {

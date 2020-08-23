@@ -2,39 +2,167 @@
 @section('konten')
 
   <!--Main layout-->
-  <main class="mt-5 p-5">
-    <div class="container card">
-    <h2 class="my-2 h3 text-center">Profil Polnep</h2>
-    <p class="text-justify">
-    <b>Politeknik Negeri Pontianak (POLNEP)</b> merupakan sistem Pendidikan Tinggi jalur profesional yang menekankan penguasaan dan pengembangan Ilmu Pengetahuan dan Teknologi untuk mendukung era industrialisasi. Secara umum, sistem pendidikan Politeknik mempunyai ciri-ciri sebagai berikut :
-    <br>1. Pendidikan tinggi yang kurikulumnya berbasis kompetensi.
-    <br>2. Pendidikan profesional yang menekankan pembentukan kompetensi untuk menangani pekerjaan teknologi menurut praktik baku.
-    <br>3. Pengajaran teori dan praktek diselenggarakan untuk saling memperkuat kemampuan penalaran dan ketrampilan menangani masalah praktis. Pengajaran teori menekankan pada pengkaitan konsep dasar dengan kasus nyata secara langsung melalui metode pemecahan secara praktis, dengan pengajaran praktik menekankan pada kemahiran mengintegrasikan teori dengan penanganan proses nyata untuk menghasilkan produk jadi.
+  <main class="">
+      <nav class="Quick-navigation">
+        <a href="#A" class="Quick-navigation-item">Sejarah Singkat</a>
+        <a href="#B" class="Quick-navigation-item">Visi dan Misi</a>
+        <a href="#C" class="Quick-navigation-item">Pejabat Struktural</a>
+        <a href="#D" class="Quick-navigation-item">Makna Lambang</a>
+        <a href="#E" class="Quick-navigation-item">Denah Polnep</a>
+      </nav>
+      
+      <section id="A" class="js-scroll-step">
+        <div class="container">
+          <div class="col-12 h3 text-center pt-5"><a class="heading-hover type1">
+            Sejarah Singkat
+          </a></div>
+          <div class="col-12 mt-5 text-justify" style="min-width: 300px; max-width: 500px;margin: auto;">
+            <p class="timeline">
+              Politeknik Negeri Pontianak (Polnep) berdiri pada areal tanah 6.3 hektar berdasarkan Surat Keputusan Direktur Jendral Pendidikan Tinggi nomor 80/DIKTI/KEP/1985.
+              Pada awal berdirinya Polnep memiliki nama Politeknik Universitas Tanjungpura dengan 3 jurusan, yaitu:
+              (a) Teknik Sipil,
+              (b) Teknik Mesin, dan
+              (c) Teknik Elektro.
+            </p>
+            <p class="timeline">
+              Tahun 1994 dibuka Jurusan Tata Niaga dengan program studi Akuntansi dan Kesekretariatan dan Administrasi Perkantoran (selanjutnya, tahun 1997 menjadi Jurusan Akuntansi dan Jurusan Administrasi Bisnis). Pada tahun 1988, Polnep memperoleh status otonomi penuh dan berubah nama menjadi Politeknik Negeri Pontianak, berdasarkan SK Menteri Pendidikan Nasional Tanggal 27 April 1997 Nomor : 079/0/1997, tanggal ini juga dijadikan hari dies natalis. Tahun 1999 dibuka Jurusan Teknologi Pertanian dengan Program Studi Teknologi Pengolahan Hasil Perkebunan (D3).
+            </p>
+            <p class="timeline">
+              Tahun 2002 dibuka Jurusan Ilmu Kelautan dan Perikanan dengan Program Studi Budidaya Perikanan (D3). Tahun 2003 bertambah dengan Program Studi Teknologi Penangkapan Ikan (D3) dan Teknologi Pengolahan Hasil Perikanan (D3). Tahun 2007 bertambah satu Program Studi yaitu teknik Elektronika (D3).
+             </p>
+            <p class="timeline">
+              Pada tahun 2008 Polnep kembali menambah Program Studi Baru untuk jenjang D4 yaitu : Teknik Perencanaan Perumahan dan Pemukiman, Administrasi Instansi Pemerintahan dan Akuntansi Sektor Publik. Tahun 2009 membuka Program Studi Teknik Informatika (D3). Pada tahun 2010 kembali membuka Program Studi Operator dan Peralatan berat jenjang (D1).
+            </p>
+            <p class="timeline">
+              Pada tahun 2013 Polnep membuka satu prodi yaitu Teknik Mesin (D4) dan pada tahun 2014 Polnep kembali membuka 2 (dua) prodi yaitu Budidaya Tanaman Perkebunan (D4) dan Manajemen Perkebunan (D4). Terakhir pada bulan Desember 2015 membuka dua prodi baru yaitu Arsitektur Bangunan Gedung (D4) dan Desain Kawasan Binaan (D4).Selain menyelenggarakan kelas reguler, Polnep juga membuka Program Studi Di luar Domisili (PDD), Tahun 2012 di Kota Singkawang membuka 2 (dua) Prodi yaitu, Teknik Informatika (D2), dan Teknologi Pengolahan Hasil Perkebunan (D2).
+            </p>
+            <p class="timeline">
+              Tahun 2013 membuka lagi di Kabupaten Polewali Mandar 2 (dua) Prodi yaitu, Teknik Pengolahan Hasil Perkebunan (D2) dan Teknik Mesin (D2). Terakhir pada bulan Juli 2015 kembali membuka PDD di Kabupaten Kapuas Hulu, 3 (tiga) Prodi yaitu, Teknik Sipil (D3), Teknologi Budidaya Perikanan (D3) dan Teknologi Pengolahan Hasil Perkebunan (D3).
+            </p>       
+            <p class="timeline">
+              Pada saat ini Polnep memiliki delapan jurusan. yang terdiri atas 8 (delapan) program studi D4, 15 (lima belas) program studi D3, 4 (empat) program studi D2 dan satu program studi D1. Status akreditasi tertinggi adalah A. Masing-masing program studi tersebut secara terus menerus bersinergi dengan seluruh komunitas Polnep dalam rangka memberikan pelayanan maksimal kepada peserta didik sehingga menghasilkan lulusan yang berkualitas, bertanggung jawab, dan memberikan konstribusi didalam meningkatkan daya saing bangsa.
+            </p>      
+          </div>
+        </div>
+      </section>
+      
+      <section id="B"  class="js-scroll-step">
+        <div class="container">
+          <div class="col-12 h3 text-center pt-5">
+            <a class="heading-hover type1">
+            Visi dan Misi
+            </a></div>
+          <div class="row">
+          <div class="col-lg-3 col-md-12 mt-5">
+            <div class="visi-misi text-justify">
+              <span>
+                <span>
+                  <span>
+                    <h3><b>V I S I</b></h3>
+                    <p>Pada tahun 2020, Polnep merupakan lembaga pendidikan tinggi vokasi terbaik dan terpercaya pada tingkat nasional dan internasional
+                    </p>
+                  </span>
+                </span>
+              </span>
+            </div>            
+          </div>
+          <div class="col-lg-9 col-md-12 mt-5">
+            <div class="visi-misi text-justify">
+              <span>
+                <span>
+                  <span>
+                    <h3><b>M I S I</b></h3>
+                    <p>
+                      <ol>
+                      <li>
+                      Menyelenggarakan pendidikan vokasi dan penelitian terapan bagi peningkatan kesejahteraan masyarakat guna menunjang upaya pembangunan nasional, sesuai dan sepadan dengan kebutuhan masyarakat
+                      </li>
+                      <li>
+                      Membina dan mengembangkan profesionalisme yang sehat dan dinamis
+                      </li> 
+                      <li>
+                      Mengembangkan dan mendayagunakan ilmu pengetahuan teknologi untuk meningkatkan kesejahteraan masyarakat dengan memberdayakan sumber daya Politeknik Negeri Pontianak secara maksimal
+                      </li>
+                      </ol>
+                    </p>
+                  </span>
+                </span>
+              </span>
+            </div>            
+          </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="C" class="js-scroll-step">
+        <div class="container">
+          <div class="col-12 h3 text-center pt-5"><a class="heading-hover type1">
+            Pejabat Struktural
+          </a></div>
+          <div class="col-12 mt-5">
 
-    <br><br><b>TENAGA PENGAJAR</b>
-    <br>Tenaga Pengajar Politeknik Negeri Pontianak berjumlah 238 orang, terdiri dari dosen dan instruktur yang telah memperoleh pendidikan kepoliteknikan baik di dalam maupun luar negeri.
-
-    <br><br><b>PROGRAM PENDIDIKAN</b>
-    <br>1. Jurusan Teknik Sipil dan Perencanaan dengan Program Studi D3 Teknik Sipil dan D4 Teknik Perencanaan Perumahan dan Permukiman.
-    <br>2. Jurusan Teknik Mesin dengan Program Studi D1 Operator Dan Peralatan Berat, D3 Teknik Mesin dan D4 Teknik Mesin.
-    <br>3. Jurusan Teknik Elektro dengan Program Studi D3 Teknik Listrik, D3 Teknik Elektronika, dan D3 Teknik Informatika.
-    <br>4. Jurusan Administrasi Bisnis dengan Program Studi D3 Administrasi Bisnis dan D4 Administrasi Negara.
-    <br>5. Jurusan Akuntansi dengan Program Studi D3 Akuntansi dan D4 Akuntansi.
-    <br>6. Jurusan Teknologi Pertanian dengan Program Studi D3 Teknologi Pengolahan Hasil Perkebunan, D4 Budidaya Tanaman Perkebunan(*) dan D4 Manajemen Perkebunan(*).
-    <br>7. Jurusan Ilmu Kelautan dan Perikanan dengan Program Studi D3 Budidaya Perikanan, D3 Teknologi Penangkapan Ikan dan D3 Teknologi Pengolahan Hasil Perikanan.
-    <br>8. Jurusan Teknik Arsitektur dengan Program Studi D3 Arsitektur, D4 Arsitektur Bangunan Gedung, dan D4 Desain Kawasan Binaan.
-    <br>9. PDD Kota Singkawang dengan Program Studi D2 Teknik Informatika dan D2 Teknologi Pengolahan Hasil Perkebunan.
-    <br>10. PDD Kabupaten Polewali Mandar dengan Program Studi D2 Teknik Pengolahan Hasil Perkebunan dan D2 Teknik Mesin.
-    <br>11. PDD Kabupaten Kapuas Hulu dengan Program Studi D3 Teknik Sipil, D3 Teknologi Budidaya Perikanan dan D3 Teknologi Pengolahan Hasil Perkebunan.
-
-    <br>Hampir semua program studi telah terakreditasi kecuali yang bertanda(*) masih dalam proses pengurusan.
-
-    <br><br><b>SARANA DAN PRASARANA</b>
-    <br>1. Laboratorium : Lab. Teknik Sipil, Lab. Teknik Mesin, Lab. Teknik Listrik, Lab. Teknologi Pertanian, Lab. Akuntansi, Lab. Arsitektur, Lab. Komputer, Lab. Bahasa, Lab. Administrasi Bisnis.
-    <br>2. Bengkel : Bengkel Teknik Sipil, Bengkel Teknik Mesin, Bengkel Teknik Listrik, Pabrik Mini.
-    <br>3. Ruang Kelas yang mampu menampung 4.000 mahasiswa.
-    </p>
-    </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="D" class="js-scroll-step">
+        <div class="container">
+          <div class="col-12 h3 text-center pt-5"><a class="heading-hover type1">
+            Makna Lambang
+          </a></div>
+          <div class="row">
+            <div class="col-lg-4 col-sm-8 mt-5">
+                <img src="http://neo.polnep.ac.id/public/assets/images/upload/logopolnep.png" class="img-fluid">
+            </div>
+            <div class="col-lg-8 col-sm-12 mt-5">
+              <div class="text-justify">
+                        <ul>
+                          Politeknik mempunyai lambang dengan simbol-simbol sebagai berikut :<br>
+                          <li>
+                          Pusat lambang Tugu Khatulistiwa berwarna hitam merupakan ciri propinsi Kalimantan Barat dan khususnya kota Pontianak sebagai kota khatulistiwa.
+                          </li>
+                          <li>
+                          panah berwarna merah mengarah ke kanan di pusat lambang menunjukkan visi global Politeknik Negeri Pontianak.
+                          </li>
+                          <li>
+                          Roda gigi berwarna abu-abu yang berarti kerja keras atau lambang sumber daya manusia yang selalu bekerja keras.
+                          </li>
+                          <li>
+                          Butiran air disusun berbentuk sayap berwarna kuning keemas-emasan menunjukkan ciri propinsi Kalimantan Barat dan melambangkan kemakmuran.
+                          </li>
+                          <li>
+                          Butiran air berjumlah 12 di kiri dan 12 di kanan menunjukkan keseimbangan dan ketepatan baik waktu, ukuran dan aturan.
+                          </li>
+                          <li>
+                          Bingkai segi lima berwarna hitam yang melingkari lambang keseluruhan menunjukkan dasar negara yaitu lima sila yang tercantum dalam Pancasila.
+                          </li>
+                          <li>
+                          Di bawah pusat lambang tercantum tulisan POLNEP menunjukkan singkatan Politeknik Negeri Pontianak.
+                          </li>
+                          <li>
+                          Warna dasar lambang berwarna biru langit menunjukkan keluasan dan ketinggian yang berarti ilmu pengetahuan harus dikejar setinggi mungkin.
+                          </li>
+                        </ul>
+              </div>            
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="E" class="js-scroll-step">
+        <div class="container">
+          <div class="col-12 h3 text-center pt-5"><a class="heading-hover type1">
+            Denah Polnep
+          </a></div>
+          <div class="col-12 mt-5 mb-5">
+            <div class="custom-img" data-ripple-color="light">
+              <img src="http://neo.polnep.ac.id/public/assets/images/upload/denah.jpg" class="w-100">
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <button class="Scroll-to-top">Scroll To Top</button>
 </main>
   <!--Main layout-->
 @endsection

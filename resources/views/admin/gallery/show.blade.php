@@ -21,12 +21,12 @@
     </div>
 
     <div class="card">
-        <div class="card-header">Gallery
+        <div class="card-header">{{__('Gallery')}}
             
         </div>
         
         <div class="card-body">
-<<<<<<< HEAD
+
             <table class="table table bordered mb-0">            
                 <tbody>                    
                         <tr> 
@@ -34,47 +34,26 @@
                             <td>{{$gallery->id}}</td>
                         </tr>
                         <tr>
+                            @if ( Config::get('app.locale') == 'id')
                             <th scope="row">Kategori</th>
+                            <td>
+                                @foreach($gallery->choices as $h)
+                                {{ $h->nama }}
+                                @endforeach
+                            </td>
+                            @elseif ( Config::get('app.locale') == 'en')
+                            <th scope="row">Category</th>
                             <td>
                                 @foreach($gallery->choices as $h)
                                 {{ $h->name }}
                                 @endforeach
                             </td>
+                            @endif
                         </tr>                    
                         <tr>
-                            <th scope="row">Gambar</th>
+                            <th scope="row">{{__('Image')}}</th>
                             <td><img src="{{asset('storage/galleries/'. $gallery->image_url)}}" width="300px" height="300px"></td>
                         </tr>                                                                                                    
-=======
-            <table class="table table bordered mb-0">
-                <thead>
-                    <tr>
-                        <th scope="col" width="60">No</th>
-                        <th scope="col" width="60">Id</th>
-                        <th scope="col" width="60">Name</th>
-                        <th scope="col" width="100">Image</th>
-                    
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $no=0; ?>
-                    @foreach ($gallery as $gal)
-                    <?php $no++; ?>
-                        <tr>
-                            <td>{{$no}}</td>
-                            <td>{{$gal->id}}</td>
-                            <td>
-                                @foreach($gal->choices as $h)
-                                {{ $h->name }}
-                                @endforeach
-                            </td>
-                            
-                            
-                            <td><img src="{{asset('storage/galleries/'. $gal->image_url)}}" width="50px" height="50px"></td>
-                            
-                        </tr>
-                    @endforeach
->>>>>>> d2845400c0bd6ba242301f27900d44c94223636f
                 </tbody>
             </table>
         </div>

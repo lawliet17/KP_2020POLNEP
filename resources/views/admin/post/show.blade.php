@@ -21,59 +21,58 @@
     </div>
 
     <div class="card">
-        <div class="card-header">Posts
+        <div class="card-header">{{__('Post')}}
         
         </div>
         
         <div class="card-body">
-            <table class="table table bordered mb-0">
-<<<<<<< HEAD
-                
+            <table class="table table bordered mb-0">                
                 <tbody>
-                        <tr>
+                    @if ( Config::get('app.locale') == 'id')
+                        <tr>                            
                             <th scope="row">Judul</th>                           
-                            <td>{{$post->title}}</td>
+                            <td>{{$post->id_title}}</td>
                         </tr>
                         <tr>    
                             <th scope="row">Kategori</th>                        
                             <td>
                                 @foreach($post->categories as $h)
-                                {{ $h->name }},
+                                {{ $h->nama }}
                                 @endforeach
                             </td>
                         </tr>
+                        <tr>    
+                            <th scope="row">Isi</th>                        
+                            <td>
+                                {!!$post->id_details!!}
+                            </td>
+                        </tr>
+                        @elseif ( Config::get('app.locale') == 'en')
+                        <tr>                            
+                            <th scope="row">Title</th>                           
+                            <td>{{$post->en_title}}</td>
+                        </tr>
+                        <tr>    
+                            <th scope="row">Category</th>                        
+                            <td>
+                                @foreach($post->categories as $h)
+                                {{ $h->name }}
+                                @endforeach
+                            </td>
+                        </tr>
+                        <tr>    
+                            <th scope="row">Details</th>                        
+                            <td>
+                                {!!$post->en_details!!}
+                            </td>
+                        </tr>
+                        @endif                                                
+                        
+                        
                         <tr>
-                            <th scope="row">Gambar</th>
+                            <th scope="row">{{__('Image')}}</th>
                             <td><img src="{{asset('storage/galleries/'. $post->thumbnail)}}" width="300px" height="300px"></td>
                         </tr>                                            
-=======
-                <thead>
-                    <tr>
-                        <th scope="col" width="60">No</th>
-                        
-                        <th scope="col" width="60">Title</th>
-                        <th scope="col" width="60">Category</th>
-                        <th scope="col" width="60">Gambar</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $no=0; ?>
-                    @foreach ($post as $pt)
-                    <?php $no++ ; ?>
-                        <tr>
-                            <td>{{$no}}</td>
-                            
-                            <td>{{$pt->title}}</td>
-                            <td>
-                                @foreach($pt->categories as $h)
-                                {{ $h->name }},
-                                @endforeach
-                            </td>
-                            <td><img src="{{asset('storage/galleries/'. $pt->thumbnail)}}" width="50px" height="50px"></td>
-                        </tr>
-                    @endforeach
->>>>>>> d2845400c0bd6ba242301f27900d44c94223636f
                 </tbody>
             </table>
         </div>

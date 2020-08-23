@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="card">
-        <div class="card-header">Edit Choice
+        <div class="card-header">{{__('Edit')}} {{__('Choice')}}
         </div>
         
         <div class="card-body">
@@ -14,6 +14,16 @@
                 @if ($errors->has('name'))
                     <span class="help-block">
                         {!! $errors->first('name')!!}
+                    </span>
+                @endif
+            </div>
+
+            <div class="form-group @if($errors->has('nama')) has-error @endif">
+                {!! Form::label('Nama') !!}
+                {!! Form::text('nama', $choice->nama, ['class'=>'form-control','placeholder'=>'Nama']) !!}
+                @if ($errors->has('nama'))
+                    <span class="help-block">
+                        {!! $errors->first('nama')!!}
                     </span>
                 @endif
             </div>

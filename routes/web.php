@@ -39,10 +39,10 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
 Route::get('/home', 'HomeController@index')->name('home');
 //  Frontend
 Route::get('/', 'FrontController@index')->name('homepage');
-
+Route::get('/profil', 'FrontController@profile')->name('profile');
 Route::get('/berita','FrontController@news')->name('news');
 Route::get('/category/{id}','FrontController@category')->name('category');
 Route::get('/post/{slug}','FrontController@post')->name('post');
 
 Route::get('/galeri','FrontController@gallery')->name('galery.index');
-Route::get('/choice/{id}','FrontController@showGallery')->name('galeri.show');
+Route::get('/galeri/{name}','FrontController@showGallery')->name('galeri.show');

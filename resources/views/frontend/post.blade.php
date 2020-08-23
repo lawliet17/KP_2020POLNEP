@@ -2,7 +2,7 @@
 @section('konten')
 
   <!--Main layout-->
-  <main class="mt-5 pt-5">
+  <main>
     <div class="container">
 
       <!--Section: Post-->

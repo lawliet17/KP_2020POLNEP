@@ -18,13 +18,14 @@
   <!-- Custom styles for this template--> 
   <link href="{{asset('admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet"/>
+  @stack('css')
 </head>
 
 <body id="page-top">
   
   <!-- Page Wrapper -->
   <div id="wrapper">
-
+    
     <!-- Sidebar -->
     @include('admin.template.sidebar')
     <!-- End of Sidebar -->
@@ -41,6 +42,8 @@
 
         <!-- Begin Page Content -->
         @yield('content')
+
+        {{-- @include('sweetalert::alert') --}}
         <!-- /.container-fluid -->
 
       </div>
@@ -104,12 +107,11 @@
   
   @stack('scripts')
   
-  @yield('create-post')
-  @yield('create-galleries')
-  @yield('edit-post')
+  @stack('create-post')  
+  @stack('edit-post')
   @yield('edit-galleries')
 
-  
+  @stack('js')
 
 </body>
 

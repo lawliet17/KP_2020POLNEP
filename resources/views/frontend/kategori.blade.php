@@ -2,14 +2,14 @@
 @section('konten')
 
   <!--Main layout-->
-  <div class="container mt-5 pt-5">
+  <div class="container pt-5">
 
 
     <!--Section: Content-->
     <section class="dark-grey-text">
   
       <!-- Section heading -->
-      <h2 class="text-center font-weight-bold mb-4 pb-2">Kategori:{{$category->name}}</h2>
+      <h3 class="text-center font-weight-bold mb-4 pb-2">Kategori:{{$category->name}}</h3>
       
       @foreach ($posts as $post)
       <!-- Grid row -->

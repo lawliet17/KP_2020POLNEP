@@ -21,7 +21,7 @@
     </div>
 
     <div class="card">
-        <div class="card-header">Categories
+        <div class="card-header">{{__('Category')}}
           
         </div>
         

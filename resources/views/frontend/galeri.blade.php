@@ -2,7 +2,7 @@
 @section('konten')
 
   <!--Main layout-->
-  <main class="mt-5 pt-5">
+  <main class="pt-5">
     <div class="container">
             <!--Section: Images-->
             <section class="text-center">
@@ -17,14 +17,13 @@
                         <!--Zoom effect-->
                         <div class="view overlay zoom z-depth-1-half">
                             <img src="https://mdbootstrap.com/img/Others/documentation/2.jpg" class="img-fluid " alt="zoom">
-                            <a href="{{url('choice/'. $choice->id)}}"><div class="mask flex-center waves-effect waves-light">
+                            <a href="{{url('galeri/'. $choice->name)}}"><div class="mask flex-center waves-effect waves-light">
                                 <p class="white-text">
                                     {{ $choice->name }}
                                 </p>
                                 </div>
                             </a>
                         </div>
-
                     </div>
                     <!-- Grid column -->
                     @endforeach

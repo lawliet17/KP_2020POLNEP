@@ -21,12 +21,11 @@
     </div>
 
     <div class="card">
-        <div class="card-header">Banner
+        <div class="card-header">{{__('Banner')}}
             
         </div>
         
         <div class="card-body">
-<<<<<<< HEAD
             <table class="table table bordered mb-0">                
                 <tbody>                    
                         <tr>
@@ -34,34 +33,9 @@
                             <td>{{$banner->id}}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Gambar</th>
+                            <th scope="row">{{__('Image')}}</th>
                             <td><img src="{{asset('storage/galleries/'. $banner->image)}}" width="200px" height="200px"></td>                           
-                        </tr>
-                   
-=======
-            <table class="table table bordered mb-0">
-                <thead>
-                    <tr>
-                        <th scope="col" width="60">No</th>
-                        <th scope="col" width="60">Id</th>
-                        
-                        <th scope="col" width="100">Image</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $no=0; ?>
-                    @foreach ($banner as $ban)
-                    <?php $no++; ?>
-                        <tr>
-                            <td>{{$no}}</td>
-                            <td>{{$ban->id}}</td>
-                            
-                            <td><img src="{{asset('storage/galleries/'. $ban->image)}}" width="200px" height="200px"></td>
-                           
-                        </tr>
-                    @endforeach
->>>>>>> d2845400c0bd6ba242301f27900d44c94223636f
+                        </tr>                
                 </tbody>
             </table>
         </div>
