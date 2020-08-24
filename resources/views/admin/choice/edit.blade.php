@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="card">
-        <div class="card-header">{{__('Edit')}} {{__('Choice')}}
+        <div class="card-header">{{__('Edit')}}
         </div>
         
         <div class="card-body">
@@ -28,7 +28,7 @@
                 @endif
             </div>
 
-            {!! Form::submit('Update', ['class'=>'btn btn-sm btn-warning']) !!}
+            {!! Form::submit(Lang::get('lang.update'), ['class'=>'btn btn-sm btn-warning']) !!}
             {!! Form::close() !!}
         </div>
     </div>

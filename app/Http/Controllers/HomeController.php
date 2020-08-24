@@ -7,6 +7,7 @@ use App\Post;
 use App\Category;
 use App\Gallery;
 use App\Choice;
+use App\Banner;
 
 class HomeController extends Controller
 {
@@ -31,7 +32,8 @@ class HomeController extends Controller
         $categories = Category::count();
         $galleries = Gallery::count();
         $choices = Choice::count();
-        return view('admin.index', compact('posts','categories','galleries','choices'));
+        $banners = Banner::count();
+        return view('admin.index', compact('posts','categories','galleries','choices','banners'));
     }
 
     public function menu()

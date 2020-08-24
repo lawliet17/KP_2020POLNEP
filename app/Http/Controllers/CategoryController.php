@@ -19,6 +19,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::orderBy('id','ASC')->get();
+        
         return view ('admin.category.index',compact('categories'));
     }
 
@@ -50,8 +51,7 @@ class CategoryController extends Controller
             $category->nama = $request->nama;
             $category->user_id = Auth::id();
             $category->save();
-        
-        
+                    
         return redirect ()->route('categories.index');
     }
 

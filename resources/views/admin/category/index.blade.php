@@ -5,8 +5,7 @@
 @push('css')    
     <link rel="stylesheet" href="{{asset('admin/vendor/datatables/dataTables.bootstrap4.min.css')}}">
 @endpush
-<div class="container-fluid">    
-
+<div class="container-fluid">        
     <div class="card">
         <div class="card-header">{{__('Category')}}
             <a href="{{route('categories.create')}}" class="btn btn-md btn-primary float-right"><i class="fa fa-plus"></i></a>

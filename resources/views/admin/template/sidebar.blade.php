@@ -63,6 +63,12 @@
         <i class="fas fa-fw fa-table"></i>
         <span>{{__('Menu')}}</span></a>
     </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/languages')}}">
+        <i class="fas fa-fw fa-table"></i>
+        <span>{{__('Language')}}</span></a>
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

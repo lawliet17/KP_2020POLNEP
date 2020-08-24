@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="card">
-        <div class="card-header">{{__('Create')}} {{__('Post')}}
+        <div class="card-header">{{__('Create')}}
         </div>
         
         <div class="card-body">
@@ -69,7 +69,7 @@
             </div>
 
             
-            {!! Form::submit('Create', ['class'=>'btn btn-sm btn-primary']) !!}
+            {!! Form::submit(Lang::get('lang.create'), ['class'=>'btn btn-sm btn-primary']) !!}
             {!! Form::close() !!}
         </div>
     </div>
@@ -83,7 +83,7 @@
       CKEDITOR.replace('en_details');
       
     $('#category_id').select2({
-      placeholder : "Select Categories"
+      placeholder : "@lang("placeholder.search")"
     });
   });
   </script>

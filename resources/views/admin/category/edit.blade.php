@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="card">
-        <div class="card-header">{{__('Edit')}} {{__('Category')}}
+        <div class="card-header">{{__('Edit')}}
         </div>
         
         <div class="card-body">
@@ -28,12 +28,7 @@
                 @endif
             </div>
 
-
-            {{-- <div class="form-group">
-                {!! Form::label('Published') !!}
-                {!! Form::select('is_published',[1=>'publish',0=>'draft'],isset($category->is_published)?$category->is_published:null,['class'=>'form-control']) !!}
-            </div> --}}
-            {!! Form::submit('Update', ['class'=>'btn btn-sm btn-warning']) !!}
+            {!! Form::submit(Lang::get('lang.update'), ['class'=>'btn btn-sm btn-warning']) !!}
             {!! Form::close() !!}
         </div>
     </div>

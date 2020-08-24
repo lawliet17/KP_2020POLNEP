@@ -23,7 +23,7 @@ return [
     |
     */
     'route_group_config' => [
-        'middleware' => 'web',
+        'middleware' => ['web','auth'],
     ],
 
     /*
@@ -56,7 +56,7 @@ return [
     | Define the URL used to access the language management too.
     |
     */
-    'ui_url' => 'languages',
+    'ui_url' => 'admin/languages',
 
     /*
     |--------------------------------------------------------------------------

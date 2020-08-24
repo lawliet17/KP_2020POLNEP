@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="card">
-        <div class="card-header">{{__('Create')}} {{__('Banner')}}
+        <div class="card-header">{{__('Create')}}
         </div>
         
         <div class="card-body">
@@ -18,7 +18,7 @@
                 @endif
             </div>
 
-            {!! Form::submit('Create', ['class'=>'btn btn-sm btn-primary']) !!}
+            {!! Form::submit(Lang::get('lang.create'), ['class'=>'btn btn-sm btn-primary']) !!}
             {!! Form::close() !!}
         </div>
     </div>

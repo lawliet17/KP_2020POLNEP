@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="card">
-        <div class="card-header">{{__('Create')}} {{__('Gallery')}}
+        <div class="card-header">{{__('Create')}}
         </div>
         
         <div class="card-body">
@@ -11,7 +11,7 @@
             {!! Form::open(['route'=>'galleries.store','enctype' =>'multipart/form-data']) !!}
             <div class="form-group @if($errors->has('choice_id')) has-error @endif">
                 {!! Form::label('Choice') !!}
-                {!! Form::select('choice_id',$choices , null, ['class'=>'form-control','id'=>'choice_id']) !!}
+                {!! Form::select('choice_id',  $choices , null, ['class'=>'form-control','id'=>'choice_id','placeholder'=>Lang::get('placeholder.search')]) !!}
                 @if ($errors->has('choice_id'))
                     <span class="help-block">
                         {!! $errors->first('choice_id')!!}
@@ -30,7 +30,7 @@
                 @endif
             </div>
 
-            {!! Form::submit('Create', ['class'=>'btn btn-sm btn-primary']) !!}
+            {!! Form::submit(Lang::get('lang.create'), ['class'=>'btn btn-sm btn-primary']) !!}
             {!! Form::close() !!}
         </div>
     </div>

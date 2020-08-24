@@ -41,14 +41,12 @@ class ChoiceController extends Controller
     {
         $this->validate($request, [
             'name' =>'required|unique:choices',
-        ],
-            [
-                'name.required' =>'Enter name',
-                'name.unique' => 'Nama telah ada',
-            ]);
+            'nama' =>'required|unique:choices',
+        ]);
 
             $choice = new Choice();
             $choice->name = $request->name;
+            $choice->nama = $request->nama;
             $choice->user_id = Auth::id();
             $choice->save();
         

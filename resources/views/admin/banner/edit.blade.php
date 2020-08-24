@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="card">
-        <div class="card-header">{{__('Edit')}} {{__('Banner')}}
+        <div class="card-header">{{__('Edit')}}
         </div>
         
         <div class="card-body">
@@ -23,7 +23,7 @@
                 <img src="{{asset('storage/galleries/'. $banner->image)}}" width="50px" height="50px">    
             </div>
             <hr>
-            {!! Form::submit('Update', ['class'=>'btn btn-sm btn-warning']) !!}
+            {!! Form::submit(Lang::get('lang.update'), ['class'=>'btn btn-sm btn-warning']) !!}
             {!! Form::close() !!}
         </div>
     </div>
