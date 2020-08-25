@@ -29,16 +29,18 @@
     --primary-color: #005c91;
     --secondary-color: #536390;
     --font-color: #424242;
-    --bg-color: #f0f0f0;
+    --bg-color: #ffffff;
+    --bg-secondary: #f7f7f7;
     --heading-color: #292922;
     --card-color: #ffffff;
     --hover: #1bf2b5; 
     }
     [data-theme="dark"] {
     --primary-color: #9A97F3;
-    --secondary-color: #818cab;
+    --secondary-color: #808caa;
     --font-color: #cdcdec;
     --bg-color: #1e1e29;
+    --bg-secondary: #1c1c25;
     --heading-color: #818cab;
     --card-color: #2f2f3a;
     --hover: #1bf2b58e;
@@ -47,10 +49,14 @@
     background-color: var(--bg-color);
     color: var(--font-color);
     }
-    h1, {
+    .bgw{
+      background-color: var(--bg-secondary);
+    }
+    
+    h1 {
     color: var(--secondary-color);
     }
-    a,p {
+    a,p,h3 {
     color: var(--font-color);
     }
     a:hover, a:active {
@@ -446,54 +452,6 @@
     transform: translateY(-20px) translateX(-20px);
   }
 }
-/* Button Top */
-#myBtn {
-  display: none; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: var(--primary-color); /* Set a background color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  border-radius: 10px; /* Rounded corners */
-  font-size: 18px; /* Increase font size */
-}
-
-.to-top{
-	color:var(--bg-color);
-	padding-top:1em;
-	display:inline-block;/* or block */
-	position:relative;
-	border-color:white;
-	text-decoration:none;
-	transition:all .3s ease-out;
-}
-.to-top:before{
-	content:'▲';
-	font-size:.9em;
-	position:absolute;
-	top:0;
-	left:50%;
-	margin-left:-.7em;
-	border:solid .13em white;
-	border-radius:10em;
-	width:1.4em;
-	height:1.4em;
-	line-height:1.3em;
-	border-color:inherit;
-	transition:transform .5s ease-in;
-}
-.to-top:hover{
-	color:pink;
-	border-color:pink;
-}
-.to-top:hover:before{
-	transform: rotate(360deg);
-}
-
 #tv {
   position: relative;
   border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
@@ -885,7 +843,100 @@ h2:after {
   transform: translate3d(0, -105%, 0);
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+/* Scroll-Top */
+.scroll-up {
+  height: 40px;
+  width: 40px;
+  display: block;
+  outline: 1px solid var(--bg-color);
+  position: fixed;
+  right: 30px;
+  bottom: 50px;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5), opacity(0) .5s;
+}
+.scroll-up svg line {
+  stroke-width: 2;
+  stroke: #aaa;
+  fill: none;
+  stroke-dasharray: 20;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.scroll-up:hover svg line.top {
+  -webkit-transform: translateX(-40px);
+  transform: translateX(-40px);
+}
+.scroll-up:hover svg line.bottom {
+  -webkit-transform: translateX(40px);
+  transform: translateX(40px);
+}
+.scroll-up:hover svg line.left {
+  -webkit-transform: translateY(40px);
+  transform: translateY(40px);
+}
+.scroll-up:hover svg line.right {
+  -webkit-transform: translateY(-40px);
+  transform: translateY(-40px);
+}
+.scroll-up .left-bar {
+  position: absolute;
+  z-index: 1;
+  background-color: transparent;
+  top: 19px;
+  left: 5px;
+  width: 18px;
+  display: block;
+  transform: rotate(-45deg);
+}
+.scroll-up .left-bar:after {
+  content: "";
+  background-color: #666;
+  width: 18px;
+  height: 1px;
+  display: block;
+  border-radius: 1px;
+  transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5);
+  transform-origin: right center;
+  z-index: -1;
+}
+.scroll-up .right-bar {
+  position: absolute;
+  z-index: 1;
+  background-color: transparent;
+  top: 19px;
+  left: 17px;
+  width: 18px;
+  display: block;
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+.scroll-up .right-bar:after {
+  content: "";
+  background-color: #666;
+  width: 18px;
+  height: 1px;
+  display: block;
+  border-radius: 1px;
+  transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5);
+  transform-origin: left center;
+  z-index: -1;
+}
+.scroll-up:hover {
+  transition: all 0.1s;
+}
+.scroll-up:hover .left-bar:after {
+  transform: rotate(-10deg);
+}
+.scroll-up:hover .right-bar:after {
+  transform: rotate(10deg);
+}
+.scroll-up {
+  margin-left: -100px;
+}
+.scroll-up {
+  position: fixed;
+}
 
 </style>
   </head>
@@ -897,8 +948,19 @@ h2:after {
 
     @include('frontend.master.footer')
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><a href="#" class="to-top"></a></button>
+    <a href="#" class="scroll-up">
+      <span class="left-bar"></span>
+      <span class="right-bar"></span> 
+      <svg width="40" height="40">
+          <line class="top" x1="0" y1="0" x2="120" y2="0"/>
+          <line class="left" x1="0" y1="40" x2="0" y2="-80"/>
+          <line class="bottom" x1="40" y1="40" x2="-80" y2="40"/>
+          <line class="right" x1="40" y1="0" x2="40" y2="1200"/>
+      </svg>
+    </a>
   </body>
+  
+
 
     <!-- SCRIPTS -->
   <!-- JQuery -->
@@ -946,25 +1008,21 @@ h2:after {
         new WOW().init();
       });
 
-//Get the button:
-mybutton = document.getElementById("myBtn");
+      var btn = $('#scroll-up');
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
   } else {
-    mybutton.style.display = "none";
+    btn.removeClass('show');
   }
-}
+});
 
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+
 
 // profile
 (function () {

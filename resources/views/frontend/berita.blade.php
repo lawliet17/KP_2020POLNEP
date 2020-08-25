@@ -1,7 +1,7 @@
 @extends('frontend.master.app')
 @section('konten')
 
-<main class="mt-5 pt-5">
+<main class="pt-5">
   <div class="container">
     <!--Grid row-->
     <div class="row">

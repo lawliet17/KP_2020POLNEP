@@ -66,16 +66,17 @@
             <br><br>
             Maka selayaknyalah POLNEP membawa peserta didiknya ke lingkungan belajar yang lebih dekat dengan keseharian mereka, lingkungan belajar dengan teknologi informasi dan komunikasi sebagai medianya. Selain itu, kami di POLNEP berupaya untuk menyebarluaskan potensi dan pemikiran yang dimiliki melalui kehadiran situs web ini. Yang selanjutnya, diharapkan dapat diikuti dengan menyatukan potensi dan kekuatan yang ada melalui suatu hubungan mutual dari semua pihak yang dapat mengaksesnya, sehingga insyaallah dapat menciptakan akses yang luas terhadap segala sumberdaya dan informasi yang dimiliki oleh semua pihak agar dapat diberdayakan secara bersama-sama untuk kepentingan masyarakat khususnya dunia pendidikan di KALBAR ini.         
           </p>
-      </div>
-        
+        </div>
       </section>
       <!--Section: Products v.3-->
+      </div>
 
       <!--Section: Products v.3-->
-      <section class="text-center mb-4 my-5">
-        <h3 class="h3 text-center mb-5"><a class="heading-hover type1">
+      <section class="bgw">
+        <div class="container py-4">
+        <div class="h3 text-center mb-5"><a class="heading-hover type1">
           Berita
-        </a></h3>
+        </a></div>
 
         <!--Grid row-->
         <div class="row wow fadeIn">
@@ -146,20 +147,17 @@
 
         </div>
         <!--Grid row-->
-
+      </div>
       </section>
       <!--Section: Products v.3-->
 
-
-      <hr class="my-5">
-
-
+      <div class="container py-4">
         <!--Section: More-->
         <section class="mb-5">
   
-          <h3 class="h3 text-center mb-5"><a class="heading-hover type1">
+          <div class="h3 text-center mb-5"><a class="heading-hover type1">
             Jurusan dan Prodi
-          </a></h3>
+          </a></div>
   
           <!--First row-->
           <div class="row features-small mt-5 wow fadeIn">
@@ -629,8 +627,7 @@
           <!--/Second row-->
   
         </section>
-        <!--Section: More-->
-        
+        <!--Section: More-->  
     </div>
   </main>
   <!--Main layout-->

@@ -46,8 +46,8 @@
         </div>
       </section>
       
-      <section id="B"  class="js-scroll-step">
-        <div class="container">
+      <section id="B"  class="js-scroll-step bgw">
+        <div class="container mb-4">
           <div class="col-12 h3 text-center pt-5">
             <a class="heading-hover type1">
             Visi dan Misi
@@ -105,7 +105,7 @@
         </div>
       </section>
       
-      <section id="D" class="js-scroll-step">
+      <section id="D" class="js-scroll-step bgw">
         <div class="container">
           <div class="col-12 h3 text-center pt-5"><a class="heading-hover type1">
             Makna Lambang
@@ -162,7 +162,7 @@
         </div>
       </section>
       
-      <button class="Scroll-to-top">Scroll To Top</button>
+      <button class="Scroll-to-top">^</button>
 </main>
   <!--Main layout-->
 @endsection

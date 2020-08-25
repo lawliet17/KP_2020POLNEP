@@ -51,7 +51,7 @@ class FrontController extends Controller
             return view('frontend.post',compact('post','public_menu'));
         } else
         {
-            return \Response::view('website.errors.404', array(), 404);
+            return \Response::view('404',[],404);
         }
     }
 
@@ -65,7 +65,7 @@ class FrontController extends Controller
             return view('frontend.kategori',compact('category','posts','public_menu'));
         } else
         {
-            return \Response::view('website.errors.404', array(), 404);
+            return \Response::view('404',[],404);
         }
     }
 
@@ -87,7 +87,7 @@ class FrontController extends Controller
             return view('frontend.galeri-detail',compact('choice','galleries','public_menu'));
         } else
         {
-            return \Response::view('website.errors.404', array(), 404);
+            return \Response::view('404',[],404);
         }
     }
 }

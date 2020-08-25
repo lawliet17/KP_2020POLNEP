@@ -61,7 +61,7 @@
                             </td>
                             @endif
                             {{-- <td>{{$gallery->choices}}</td> --}}
-                            <td><img src="{{asset('storage/galleries/'. $gallery->image_url)}}" width="50px" height="50px"></td>
+                            <td><a href="#lightbox" data-slide-to="{{ $loop->index}}"><img src="{{asset('storage/galleries/'. $gallery->image_url)}}" width="50px" height="50px" data-toggle="modal" data-target="#modal"></a></td>
                             <td>                                
                                 <a href="{{route('galleries.edit', $gallery->id)}}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                                 {!! Form::open(['route'=>['galleries.destroy',$gallery->id],'method'=>'delete','style'=>'display:inline','onsubmit'=>'return ConfirmDelete()']) !!}
@@ -77,7 +77,24 @@
             </div>
         </div>
     </div>
-  </div>    
+  </div>  
+        <!-- Modal -->
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="Lightbox Gallery by Bootstrap 4" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+      
+                  <div id="lightbox" class="carousel slide" data-ride="carousel" data-interval="10000" data-keyboard="true">
+                    <div class="carousel-inner">
+                      @foreach ($galleries as $gallery)
+                      <div class="carousel-item {{$loop->last ? 'active' : ''}}"><img src="{{ asset('storage/galleries/'. $gallery->image_url) }}" class="w-100"
+                         alt="">
+                        </div>
+                      @endforeach
+                </div>
+              </div>
+            </div>
+          </div>
 @endsection
 @push('js')    
     <script src="{{asset('admin/vendor/datatables/jquery.dataTables.min.js')}}"></script>

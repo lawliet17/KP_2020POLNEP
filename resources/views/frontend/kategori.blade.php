@@ -33,11 +33,27 @@
         <div class="col-lg-7 col-xl-8">
   
           <!-- Post title -->
-          <h4 class="font-weight-bold mb-3"><strong>{{$post->title}}</strong></h4>
+          @if ( Config::get('app.locale') == 'id')
+                <a href="{{url('post/'. $post->id_slug)}}">
+                @elseif ( Config::get('app.locale') == 'en')
+                <a href="{{url('post/'. $post->en_slug)}}">
+                @endif
+          <h4 class="font-weight-bold mb-3">
+            <strong>
+              @if ( Config::get('app.locale') == 'id')
+              {{$post->id_title}}
+            @elseif ( Config::get('app.locale') == 'en')
+              {{$post->en_title}}
+            @endif
+            </strong></h4>
           <!-- Excerpt -->
-          <p class="dark-grey-text">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit
-            quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus
-            et aut officiis cum soluta nobis est eligendi placeat facere aut rerum.</p>
+          <p class="text-justify">
+            @if ( Config::get('app.locale') == 'id')
+            {{ Str::limit($post->id_details, 500) }}
+            @elseif ( Config::get('app.locale') == 'en')
+            {{ Str::limit($post->en_details, 500) }}
+            @endif
+          </p>
           <!-- Post data -->
           <div class="row">
             <div class="col-6">

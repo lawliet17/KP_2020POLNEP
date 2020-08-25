@@ -1,4 +1,4 @@
-<footer style="background-color: rgba(0, 0, 0, 0.164);">
+<footer class="bgw">
   <div class="container p-4">
     <div class="row">
       <div class="col-sm-6">
@@ -17,7 +17,6 @@
               <div class="text-center">
                   <h3>Kontak</h3>
               </div>
-              <hr>
               <div class="footer-contact-info">
                   <ul>
                       <li>

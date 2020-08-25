@@ -10,7 +10,7 @@
         @foreach ($galleries as $gallery)
         <div class="col-lg-4 col-md-6 mb-3" data-toggle="modal" data-target="#modal">
           <div class="custom-img" data-ripple-color="light">
-            <a href="#lightbox" data-slide-to="{{ $loop->index}}"><img src="{{ asset('storage/galleries/'. $gallery->image_url) }}" class="w-100"></a>        </a>
+            <a href="#lightbox" data-slide-to="{{ $loop->index}}"><img src="{{ asset('storage/galleries/'. $gallery->image_url) }}" class="w-100"></a>
           </div>
             
         </div>    
