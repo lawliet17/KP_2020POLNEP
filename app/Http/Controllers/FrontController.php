@@ -34,7 +34,7 @@ class FrontController extends Controller
     {
         $categories = Category::orderBy('name','ASC')->get();
         $posts = Post::orderBy('id','DESC')->where('post_type','post')->paginate(2);
-        $jumlah_post = CategoryPost::where('category_id',1)->count();
+        $jumlah_post = CategoryPost::where('category_id')->count();
         $public_menu = Menu::getByName('default-menu');
         return view('frontend.berita', compact('categories','posts','public_menu','jumlah_post'));
     }

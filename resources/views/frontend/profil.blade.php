@@ -6,9 +6,8 @@
       <nav class="Quick-navigation">
         <a href="#A" class="Quick-navigation-item">Sejarah Singkat</a>
         <a href="#B" class="Quick-navigation-item">Visi dan Misi</a>
-        <a href="#C" class="Quick-navigation-item">Pejabat Struktural</a>
-        <a href="#D" class="Quick-navigation-item">Makna Lambang</a>
-        <a href="#E" class="Quick-navigation-item">Denah Polnep</a>
+        <a href="#C" class="Quick-navigation-item">Makna Lambang</a>
+        <a href="#D" class="Quick-navigation-item">Denah Polnep</a>
       </nav>
       
       <section id="A" class="js-scroll-step">
@@ -94,18 +93,7 @@
         </div>
       </section>
       
-      <section id="C" class="js-scroll-step">
-        <div class="container">
-          <div class="col-12 h3 text-center pt-5"><a class="heading-hover type1">
-            Pejabat Struktural
-          </a></div>
-          <div class="col-12 mt-5">
-
-          </div>
-        </div>
-      </section>
-      
-      <section id="D" class="js-scroll-step bgw">
+      <section id="C" class="js-scroll-step bgw">
         <div class="container">
           <div class="col-12 h3 text-center pt-5"><a class="heading-hover type1">
             Makna Lambang
@@ -149,7 +137,7 @@
         </div>
       </section>
       
-      <section id="E" class="js-scroll-step">
+      <section id="D" class="js-scroll-step">
         <div class="container">
           <div class="col-12 h3 text-center pt-5"><a class="heading-hover type1">
             Denah Polnep

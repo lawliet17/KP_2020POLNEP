@@ -42,9 +42,9 @@
               <!-- Excerpt -->
           <p class="text-justify">
             @if ( Config::get('app.locale') == 'id')
-            {{ Str::limit($post->id_details, 200) }}
+            {!! Str::limit($post->id_details, 200) !!}
             @elseif ( Config::get('app.locale') == 'en')
-            {{ Str::limit($post->en_details, 200) }}
+            {!! Str::limit($post->en_details, 200) !!}
             @endif
           </p>
               <div class="row mb-3">

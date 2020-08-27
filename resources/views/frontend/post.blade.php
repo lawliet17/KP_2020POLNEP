@@ -42,9 +42,9 @@
                 </div>
                 <br>
                 @if ( Config::get('app.locale') == 'id')
-                {{($post->id_details)}}
+                {!! ($post->id_details) !!}
                 @elseif ( Config::get('app.locale') == 'en')
-                {{($post->en_details)}}
+                {!! ($post->en_details) !!}
                 @endif
               </div>
 

@@ -49,9 +49,9 @@
           <!-- Excerpt -->
           <p class="text-justify">
             @if ( Config::get('app.locale') == 'id')
-            {{ Str::limit($post->id_details, 500) }}
+            {!! Str::limit($post->id_details, 500) !!}
             @elseif ( Config::get('app.locale') == 'en')
-            {{ Str::limit($post->en_details, 500) }}
+            {!! Str::limit($post->en_details, 500) !!}
             @endif
           </p>
           <!-- Post data -->
