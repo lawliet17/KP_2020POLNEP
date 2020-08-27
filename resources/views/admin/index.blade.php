@@ -5,14 +5,10 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">{{__('Dashboard')}}</h1>
-      
+      <h1 class="h3 mb-0 text-gray-800">{{__('Dashboard')}}</h1>      
     </div>
-
     <!-- Content Row -->
-    <div class="row">
-
-      
+    <div class="row">      
       <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-primary shadow h-100 py-2">
           <div class="card-body">
@@ -22,7 +18,7 @@
                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{$posts}}</div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                <i class="far fa-clipboard fa-2x text-gray-300"></i>
               </div>
             </div>
           </div>
@@ -38,7 +34,7 @@
                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{$banners}}</div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                <i class="far fa-images fa-2x text-gray-300"></i>
               </div>
             </div>
           </div>
@@ -55,7 +51,7 @@
                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{$categories}}</div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                <i class="far fa-list-alt fa-2x text-gray-300"></i>
               </div>
             </div>
           </div>
@@ -72,7 +68,7 @@
                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{$galleries}}</div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                <i class="far fa-images fa-2x text-gray-300"></i>
               </div>
             </div>
           </div>
@@ -89,7 +85,7 @@
                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{$choices}}</div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-comments fa-2x text-gray-300"></i>
+                <i class="far fa-list-alt fa-2x text-gray-300"></i>
               </div>
             </div>
           </div>

@@ -49,16 +49,30 @@
                                 {!!$post->en_details!!}
                             </td>
                         </tr>
-                        @endif                                                
-                        
-                        
+                        @endif                                                                                                
                         <tr>
                             <th scope="row">{{__('Image')}}</th>
-                            <td><img src="{{asset('storage/galleries/'. $post->thumbnail)}}" width="300px" height="300px"></td>
+                            <td><a href="#lightbox"><img src="{{asset('storage/galleries/'. $post->thumbnail)}}" width="50px" height="50px" data-toggle="modal" data-target="#modal"></a></td>
                         </tr>                                            
                 </tbody>
             </table>
         </div>
     </div>
-  </div>    
+  </div>
+
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="Lightbox Gallery by Bootstrap 4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">    
+                <div id="lightbox" class="carousel slide" data-ride="carousel" data-interval="10000" data-keyboard="true">
+                    <div class="carousel-inner">                      
+                        <div class="carousel-item active"><img src="{{ asset('storage/galleries/'. $post->thumbnail) }}" class="w-100"
+                         alt="">
+                        </div>                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
