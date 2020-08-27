@@ -12,7 +12,7 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
+    <li class="nav-item {{Request::is('home') ? 'active' : ''}}">
       <a class="nav-link" href="{{route('home')}}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>{{__('Dashboard')}}</span></a>
@@ -27,46 +27,46 @@
     </div>    
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
+    <li class="nav-item {{Request::is('admin/posts') ? 'active' : ''}}">
       <a class="nav-link" href="{{route('posts.index')}}">
-        <i class="fas fa-fw fa-table"></i>
+        <i class="far fa-clipboard"></i>
         <span>{{__('Post')}}</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
+    <li class="nav-item {{Request::is('admin/categories') ? 'active' : ''}}">
       <a class="nav-link" href="{{route('categories.index')}}">
-        <i class="fas fa-fw fa-table"></i>
+        <i class="far fa-list-alt"></i>
         <span>{{__('Category')}}</span></a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item {{Request::is('admin/galleries') ? 'active' : ''}}">
       <a class="nav-link" href="{{route('galleries.index')}}">
-        <i class="fas fa-fw fa-table"></i>
+        <i class="far fa-images"></i>
         <span>{{__('Gallery')}}</span></a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item {{Request::is('admin/choices') ? 'active' : ''}}">
       <a class="nav-link" href="{{route('choices.index')}}">
-        <i class="fas fa-fw fa-table"></i>
+        <i class="far fa-list-alt"></i>
         <span>{{__('Choice')}}</span></a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item {{Request::is('admin/banners') ? 'active' : ''}}">
       <a class="nav-link" href="{{route('banners.index')}}">
-        <i class="fas fa-fw fa-table"></i>
+        <i class="far fa-images"></i>
         <span>{{__('Banner')}}</span></a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item {{Request::is('admin/menu') ? 'active' : ''}}">
       <a class="nav-link" href="{{route('menu')}}">
-        <i class="fas fa-fw fa-table"></i>
+        <i class="fas fa-bars"></i>
         <span>{{__('Menu')}}</span></a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link" href="{{url('admin/languages')}}">
-        <i class="fas fa-fw fa-table"></i>
+        <i class="fas fa-language"></i>
         <span>{{__('Language')}}</span></a>
     </li>
     <!-- Divider -->
