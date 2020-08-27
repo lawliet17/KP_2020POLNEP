@@ -40,7 +40,7 @@
       <!--Section: Products v.3-->
       <section class="row mb-4 my-5">
         <div class="col-12 h3 text-center mb-5"><a class="heading-hover type1">
-          Pesan Direktur
+          @lang('lang.secdir')
         </a></div>
         <div class="col-12">
           <div class="profile-pic float-left mr-3">
@@ -55,16 +55,7 @@
         
           </div>
             <p style="text-align: justify;">
-            Assalamualaikum Warahmatullahi Wabarakatuh. Kita tidak dapat memungkiri, bahwa teknologi berkembang sangat cepat, bahkan mungkin lebih cepat dari kemampuan manusia untuk menguasainya. Demikian pula dengan pengaruh dari teknologi terhadap segala aspek kehidupan manusia, tentunya sangatlah besar.
-            <br><br>
-            Sebagai penyedia jasa pendidikan, Politeknik Negeri Pontianak saat ini punya tantangan, yaitu “Menjadikan peserta didik saat ini menjadi pemimpin babak dua dari abad 21 serta, Bagaimana dapat menyiapkan peserta didik untuk menghadapi Dunia dimasa depan.
-            Yaitu dunia yang diantara hari-harinya diisi dengan hal-hal sebagai berikut :
-            Perkembangan yang sangat pesat dari informasi dan komunikasi,
-            Penemuan produk dan jasa baru setiap saat,
-            Penggunaan komputer dan internet yang sangat luas,
-            Pengetahuan dan penguasaan terhadap teknologi adalah keahlian yang mendasar.
-            <br><br>
-            Maka selayaknyalah POLNEP membawa peserta didiknya ke lingkungan belajar yang lebih dekat dengan keseharian mereka, lingkungan belajar dengan teknologi informasi dan komunikasi sebagai medianya. Selain itu, kami di POLNEP berupaya untuk menyebarluaskan potensi dan pemikiran yang dimiliki melalui kehadiran situs web ini. Yang selanjutnya, diharapkan dapat diikuti dengan menyatukan potensi dan kekuatan yang ada melalui suatu hubungan mutual dari semua pihak yang dapat mengaksesnya, sehingga insyaallah dapat menciptakan akses yang luas terhadap segala sumberdaya dan informasi yang dimiliki oleh semua pihak agar dapat diberdayakan secara bersama-sama untuk kepentingan masyarakat khususnya dunia pendidikan di KALBAR ini.         
+            @lang('lang.pesandirektur')
           </p>
         </div>
       </section>
@@ -75,7 +66,7 @@
       <section class="bgw">
         <div class="container py-4">
         <div class="h3 text-center mb-5"><a class="heading-hover type1">
-          Berita
+          @lang('lang.secberita')
         </a></div>
 
         <!--Grid row-->
@@ -157,7 +148,7 @@
         <section class="mb-5">
   
           <div class="h3 text-center mb-5"><a class="heading-hover type1">
-            Jurusan dan Prodi
+            @lang('lang.secdept')
           </a></div>
           
           <div id="flex-container" class="testimonials">
@@ -165,68 +156,66 @@
               <ul class="list">
                 <li class="item">
                   <input type="radio" id="radio_testimonial-1" name="basic_carousel" checked="checked" />
-                  <label class="label_testimonial-1" for="radio_testimonial-1">Teknik Sipil</label>
+                  <label class="label_testimonial-1" for="radio_testimonial-1">@lang('lang.sipildept')</label>
                   <div class="content-test content_testimonial-1">
-                    <h1>Teknik Sipil</h1>
-                    <p>Jurusan Teknik Sipil dan Perencanaan terbagi menjadi dua Program Studi yaitu Program Studi Teknik Sipil (D3) dan Program Studi Perencanaan Perumahan Dan Pemukiman (D4)</p>
+                    <h1>@lang('lang.sipildept')</h1>
+                    <p>@lang('lang.sipildetail')</p>
                   </div>
                 </li>
                 <li class="item">
                   <input type="radio" id="radio_testimonial-2" name="basic_carousel" />
-                  <label class="label_testimonial-2" for="radio_testimonial-2">Teknik Mesin</label>
+                  <label class="label_testimonial-2" for="radio_testimonial-2">@lang('lang.mesindept')</label>
                   <div class="content-test content_testimonial-2">
-                    <h1>Teknik Mesin</h1>
-                    <p>Jurusan Teknik Mesin terbagi menjadi tiga Program Studi yaitu Program Studi Teknik Mesin (D4), Program Studi Teknik Mesin (D3) dan Program Studi Operator & Peralatan Alat Berat (D1)</p>
+                    <h1>@lang('lang.mesindept')</h1>
+                    <p>@lang('lang.mesindetail')</p>
                   </div>
                 </li>
                 <li class="item">
                   <input type="radio" id="radio_testimonial-3" name="basic_carousel" />
-                  <label class="label_testimonial-3" for="radio_testimonial-3">Teknik Elektro</label>
+                  <label class="label_testimonial-3" for="radio_testimonial-3">@lang('lang.elektrodept')</label>
                   <div class="content-test content_testimonial-3">
-                    <h1>Teknik Elektro</h1>
-                    <p>Jurusan Teknik Elektro menyelenggarakan pendidikan Diploma 3 (D3) yang mencakup tiga progam studi yaitu Program Studi Teknik Listrik, Program Studi Teknik Elektronika dan Program Studi Teknik Informatika</p>
+                    <h1>@lang('lang.elektrodept')</h1>
+                    <p>@lang('lang.elektrodetail')</p>
                   </div>
                 </li>
                 <li class="item">
                   <input type="radio" id="radio_testimonial-4" name="basic_carousel" />
-                  <label class="label_testimonial-4" for="radio_testimonial-4">Akuntansi</label>
+                  <label class="label_testimonial-4" for="radio_testimonial-4">@lang('lang.akdept')</label>
                   <div class="content-test content_testimonial-4">
-                    <h1>Akuntansi</h1>
-                    <p>Jurusan Akuntansi mempunyai 2 (dua) program studi, yaitu Diploma III Program Studi Akuntansi dan Diploma IV Program Studi Akuntansi</p>
+                    <h1>@lang('lang.akdept')</h1>
+                    <p>@lang('lang.akdetail')</p>
                   </div>
                 </li>
                 <li class="item">
                   <input type="radio" id="radio_testimonial-5" name="basic_carousel" />
-                  <label class="label_testimonial-5" for="radio_testimonial-5">Administrasi Bisnis</label>
+                  <label class="label_testimonial-5" for="radio_testimonial-5">@lang('lang.admdept')</label>
                   <div class="content-test content_testimonial-5">
-                    <h1>Administrasi Bisnis</h1>
-                    <p>Jurusan Adminsitrasi Bisnis saat ini mempunyai 2 (dua) program studi, yaitu Diploma III Program Studi Administrasi Bisnis dan Diploma IV Program Studi Administrasi Negara</p>
+                    <h1>@lang('lang.admdept')</h1>
+                    <p>@lang('lang.admdetail')</p>
                   </div>
                 </li>
                 <li class="item">
                   <input type="radio" id="radio_testimonial-6" name="basic_carousel" />
-                  <label class="label_testimonial-6" for="radio_testimonial-6">Teknologi Pertanian</label>
+                  <label class="label_testimonial-6" for="radio_testimonial-6">@lang('lang.tanidept')</label>
                   <div class="content-test content_testimonial-6">
-                    <h1>Teknologi Pertanian</h1>
-                    <p>Jurusan Teknologi Pertanian terbagi menjadi tiga Program Studi yaitu Program Studi Teknologi Pengolahan Hasil Perkebunan (D3), Program Studi Manajemen Perkebunan (D4), dan Program Studi Budidaya Tanaman Perkebunan (D4)</p>
+                    <h1>@lang('lang.tanidept')</h1>
+                    <p>@lang('lang.tanidetail')</p>
                   </div>
                 </li>
                 <li class="item">
                   <input type="radio" id="radio_testimonial-7" name="basic_carousel" />
-                  <label class="label_testimonial-7" for="radio_testimonial-7">Ilmu Kelautan dan Perikanan</label>
+                  <label class="label_testimonial-7" for="radio_testimonial-7">@lang('lang.ikpdept')</label>
                   <div class="content-test content_testimonial-7">
-                    <span class="picto"></span>
-                    <h1>Ilmu Kelautan dan Perikanan</h1>
-                    <p>Jurusan Ilmu Kelautan dan Perikanan terbagi menjadi tiga program studi yaitu : Budidaya Perikanan (D3), Teknologi Penangkapan Ikan (D3), dan Teknologi Pengolahan Hasil Perikanan (D3)</p>
+                    <h1>@lang('lang.ikpdept')</h1>
+                    <p>@lang('lang.ikpdetail')</p>
                   </div>
                 </li>
                 <li class="item">
                   <input type="radio" id="radio_testimonial-8" name="basic_carousel" />
-                  <label class="label_testimonial-8" for="radio_testimonial-8">Teknik Arsitektur</label>
+                  <label class="label_testimonial-8" for="radio_testimonial-8">@lang('lang.arsdept')</label>
                   <div class="content-test content_testimonial-8">
-                    <span class="picto"></span>
-                    <h1>Teknik Arsitektur</h1>
-                    <p>Jurusan Teknik Arsitektur memiliki tiga Program Studi yaitu Program Studi Arsitektur (D3), Program Studi Arsitektur Bangunan Gedung (D4) dan Program Studi Desain Kawasan Binaan (D4)</p>
+                    <h1>@lang('lang.arsdept')</h1>
+                    <p>@lang('lang.arsdetail')</p>
                   </div>
                 </li>
               </ul>

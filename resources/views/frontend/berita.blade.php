@@ -74,7 +74,7 @@
       <div class="col-md-3 mb-4">
         <!--Section: Sidebar-->
         <section class="container card sticky-top" style="top: 80px;">
-          <h3 class="mt-3 text-center"><span>CATEGORIES</span></h3>
+          <h3 class="mt-3 text-center"><span>@lang('lang.cat')</span></h3>
           <ul class="list-group list-group-flush shadow-5 p-4 mb-4">
               
               @foreach ($categories as $cat)

@@ -15,7 +15,7 @@
       <div class="col-sm-6">
           <section class="widget wow fadeInRight">
               <div class="text-center">
-                  <h3>Kontak</h3>
+                  <h3>@lang('lang.contact')</h3>
               </div>
               <div class="footer-contact-info">
                   <ul>
@@ -23,7 +23,7 @@
                           <p><i class="fa fa-building"></i>Politeknik Negeri Pontianak </p>
                       </li>
                       <li>
-                          <p><i class="fa fa-map-marker"></i>Jl. Jenderal Ahmad Yani, Bansir Laut, Pontianak Tenggara, Kota Pontianak, Kalimantan Barat 78124 </p>
+                          <p><i class="fa fa-map-marker"></i>@lang('lang.alamat') 78124 </p>
                       </li>
                       <li>
                           <p><i class="fa fa-envelope"></i><strong>Email:</strong> <a href="mailto:kampus@polnep.ac.id">kampus@polnep.ac.id</a></p>
