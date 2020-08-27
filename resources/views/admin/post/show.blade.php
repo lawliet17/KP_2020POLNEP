@@ -2,24 +2,7 @@
 
 
 @section('content')
-<div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            @if(Session::has('message'))
-                <div class="alert alert-success alert-dismissible">
-                    <button class="close" type="button" data-dismiss="alert" aria-hidden="true"></button>
-                    {{Session('message')}}
-                </div>
-            @endif
-            @if(Session::has('delete-message'))
-                <div class="alert alert-success alert-dismissible">
-                    <button class="close" type="button" data-dismiss="alert" aria-hidden="true"></button>
-                    {{Session('delete-message')}}
-                </div>
-            @endif
-        </div>
-    </div>
-
+<div class="container-fluid">    
     <div class="card">
         <div class="card-header">{{__('Post')}}
         

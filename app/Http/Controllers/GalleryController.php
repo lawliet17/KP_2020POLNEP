@@ -44,10 +44,6 @@ class GalleryController extends Controller
         $this->validate($request,[
             'image_url' => 'required',
             'choice_id' => 'required'
-        ],
-        [
-            'image_url.required' => 'Pilih image',
-            'choice_id.required' => 'Pilih kategori'
         ]);
         $gallery = new Gallery();
         $gallery->user_id = Auth::id();
@@ -105,10 +101,6 @@ class GalleryController extends Controller
         $this->validate($request,[
             'image_url' => 'required',
             'choice_id' => 'required'
-        ],
-        [
-            'image_url.required' => 'Pilih image',
-            'choice_id.required' => 'Pilih kategori'
         ]);
 
         $gallery->user_id = Auth::id();
@@ -140,7 +132,6 @@ class GalleryController extends Controller
     {
         Storage::delete('storage/galleries'. $gallery->image_url);
         $gallery->delete();
-
         Session::flash('delete-message','Berhasil dihapus');
         return redirect ()->route('galleries.index');
     }

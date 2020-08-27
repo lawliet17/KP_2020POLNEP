@@ -42,10 +42,6 @@ class BannerController extends Controller
         $this->validate($request,[
             'image' => 'required',
             
-        ],
-        [
-            'image.required' => 'Pilih image',
-            
         ]);
         $banner = new Banner();
         $banner->user_id = Auth::id();
@@ -100,10 +96,6 @@ class BannerController extends Controller
         $this->validate($request,[
             'image' => 'required',
             
-        ],
-        [
-            'image.required' => 'Pilih image',
-            
         ]);
 
         $banner->user_id = Auth::id();
@@ -133,7 +125,6 @@ class BannerController extends Controller
     {
         Storage::delete('storage/galleries'. $banner->image_url);
         $banner->delete();
-
         Session::flash('delete-message','Berhasil dihapus');
         return redirect ()->route('banners.index');
     }

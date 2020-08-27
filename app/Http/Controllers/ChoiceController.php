@@ -87,11 +87,7 @@ class ChoiceController extends Controller
     {
         $this->validate($request, [
             'name' =>'required|unique:choices,name,' .$choice->id,
-        ],
-            [
-                'name.required' =>'Enter name',
-                'name.unique' => 'Nama telah ada',
-            ]);
+        ]);
 
         $choice->name = $request->name;
         $choice->user_id = Auth::id();
@@ -109,9 +105,7 @@ class ChoiceController extends Controller
      */
     public function destroy(Choice $choice)
     {
-
         $choice->delete();
-
         Session::flash('delete-message','Berhasil dihapus');
         return redirect()->back();
     }

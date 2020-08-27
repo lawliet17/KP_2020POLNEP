@@ -66,9 +66,7 @@
                         {!! $errors->first('category_id')!!}
                     </span>
                 @endif
-            </div>
-
-            
+            </div>        
             {!! Form::submit(Lang::get('lang.create'), ['class'=>'btn btn-sm btn-primary']) !!}
             {!! Form::close() !!}
         </div>

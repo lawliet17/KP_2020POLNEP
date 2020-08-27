@@ -23,8 +23,7 @@ class CreatePostsTable extends Migration
             $table->string('en_slug')->unique();
             $table->text('id_details');
             $table->text('en_details');
-            $table->string('post_type')->nullable();
-            $table->enum('is_published',['1','0']);
+            $table->string('post_type')->nullable();            
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

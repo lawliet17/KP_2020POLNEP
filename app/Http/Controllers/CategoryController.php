@@ -18,8 +18,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::orderBy('id','ASC')->get();
-        
+        $categories = Category::orderBy('id','ASC')->get();        
         return view ('admin.category.index',compact('categories'));
     }
 
@@ -51,7 +50,7 @@ class CategoryController extends Controller
             $category->nama = $request->nama;
             $category->user_id = Auth::id();
             $category->save();
-                    
+        Session::flash('message','Telah berhasil ditambahkan');            
         return redirect ()->route('categories.index');
     }
 
@@ -89,13 +88,7 @@ class CategoryController extends Controller
         $this->validate($request, [
             'name' =>'required|unique:categories,name,' .$category->id,
             'nama' =>'required|unique:categories,nama,' .$category->id,
-        ],
-            [
-                'name.required' =>'Enter name',
-                'name.unique' => 'Nama telah ada',
-                'nama.required' =>'Enter name',
-                'nama.unique' => 'Nama telah ada',
-            ]);
+        ]);
 
         $category->name = $request->name;
         $category->nama = $request->nama;
@@ -115,7 +108,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-
         Session::flash('delete-message','Berhasil dihapus');
         return redirect ()->route('categories.index');
     }

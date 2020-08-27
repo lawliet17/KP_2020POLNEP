@@ -6,7 +6,22 @@
     <link rel="stylesheet" href="{{asset('admin/vendor/datatables/dataTables.bootstrap4.min.css')}}">
 @endpush
 <div class="container-fluid">
- 
+<div class="row">
+        <div class="col">
+            @if(Session::has('message'))
+                <div class="alert alert-success alert-dismissible">
+                    <button class="close" type="button" data-dismiss="alert" aria-hidden="true"></button>
+                    {{Session('message')}}
+                </div>
+            @endif
+            @if(Session::has('delete-message'))
+                <div class="alert alert-success alert-dismissible">
+                    <button class="close" type="button" data-dismiss="alert" aria-hidden="true"></button>
+                    {{Session('delete-message')}}
+                </div>
+            @endif
+        </div>
+</div>
     <div class="card">
         <div class="card-header">{{__('Post')}}
             <a href="{{route('posts.create')}}" class="btn btn-md btn-primary float-right"><i class="fa fa-plus"></i></a>

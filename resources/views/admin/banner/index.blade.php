@@ -5,9 +5,23 @@
 @push('css')    
     <link rel="stylesheet" href="{{asset('admin/vendor/datatables/dataTables.bootstrap4.min.css')}}">
 @endpush
-
 <div class="container-fluid">
-    
+<div class="row">
+        <div class="col">
+            @if(Session::has('message'))
+                <div class="alert alert-success alert-dismissible">
+                    <button class="close" type="button" data-dismiss="alert" aria-hidden="true"></button>
+                    {{Session('message')}}
+                </div>
+            @endif
+            @if(Session::has('delete-message'))
+                <div class="alert alert-success alert-dismissible">
+                    <button class="close" type="button" data-dismiss="alert" aria-hidden="true"></button>
+                    {{Session('delete-message')}}
+                </div>
+            @endif
+        </div>
+</div>
 
     <div class="card">
         <div class="card-header">{{__('Banner')}}
@@ -42,9 +56,8 @@
                             <td>{{$no}}</td>
                             <td>{{$banner->id}}</td>
                             
-                            <td><img src="{{asset('storage/galleries/'. $banner->image)}}" width="50px" height="50px"></td>
-                            <td>
-                                <a href="{{route('banners.show', $banner->id)}}" class="btn btn-sm btn-secondary"><i class="fa fa-eye"></i></a>
+                            <td><a href="#lightbox" data-slide-to="{{ $loop->index}}"><img src="{{asset('storage/galleries/'. $banner->image)}}" width="50px" height="50px" data-toggle="modal" data-target="#modal"></a></td>
+                            <td>                                
                                 <a href="{{route('banners.edit', $banner->id)}}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                                 {!! Form::open(['route'=>['banners.destroy',$banner->id],'method'=>'delete','style'=>'display:inline','onsubmit'=>'return ConfirmDelete()']) !!}                                                                
                                 {!! Form::button('<i class="fa fa-trash"></i>', ['type'=>'submit','class'=>'btn btn-sm btn-danger']) !!}
@@ -59,7 +72,26 @@
             </div>
         </div>
     </div>
-  </div>    
+  </div>
+
+        <!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="Lightbox Gallery by Bootstrap 4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">    
+                <div id="lightbox" class="carousel slide" data-ride="carousel" data-interval="10000" data-keyboard="true">
+                    <div class="carousel-inner">
+                      @foreach ($banners as $banner)
+                        <div class="carousel-item {{$loop->last ? 'active' : ''}}"><img src="{{ asset('storage/galleries/'. $banner->image) }}" class="w-100"
+                         alt="">
+                        </div>
+                      @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @push('js')    

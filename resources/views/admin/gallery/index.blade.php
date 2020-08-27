@@ -6,7 +6,22 @@
     <link rel="stylesheet" href="{{asset('admin/vendor/datatables/dataTables.bootstrap4.min.css')}}">
 @endpush
 <div class="container-fluid">
-    
+<div class="row">
+        <div class="col">
+            @if(Session::has('message'))
+                <div class="alert alert-success alert-dismissible">
+                    <button class="close" type="button" data-dismiss="alert" aria-hidden="true"></button>
+                    {{Session('message')}}
+                </div>
+            @endif
+            @if(Session::has('delete-message'))
+                <div class="alert alert-success alert-dismissible">
+                    <button class="close" type="button" data-dismiss="alert" aria-hidden="true"></button>
+                    {{Session('delete-message')}}
+                </div>
+            @endif
+        </div>
+</div>
     <div class="card">
         <div class="card-header">{{__('Gallery')}}
             <a href="{{route('galleries.create')}}" class="btn btn-md btn-primary float-right"><i class="fa fa-plus"></i></a>
@@ -59,8 +74,7 @@
                                 {{ $h->name }}
                                 @endforeach
                             </td>
-                            @endif
-                            {{-- <td>{{$gallery->choices}}</td> --}}
+                            @endif                                    
                             <td><a href="#lightbox" data-slide-to="{{ $loop->index}}"><img src="{{asset('storage/galleries/'. $gallery->image_url)}}" width="50px" height="50px" data-toggle="modal" data-target="#modal"></a></td>
                             <td>                                
                                 <a href="{{route('galleries.edit', $gallery->id)}}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
@@ -79,22 +93,23 @@
     </div>
   </div>  
         <!-- Modal -->
-        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="Lightbox Gallery by Bootstrap 4" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-body">
-      
-                  <div id="lightbox" class="carousel slide" data-ride="carousel" data-interval="10000" data-keyboard="true">
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="Lightbox Gallery by Bootstrap 4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">    
+                <div id="lightbox" class="carousel slide" data-ride="carousel" data-interval="10000" data-keyboard="true">
                     <div class="carousel-inner">
                       @foreach ($galleries as $gallery)
-                      <div class="carousel-item {{$loop->last ? 'active' : ''}}"><img src="{{ asset('storage/galleries/'. $gallery->image_url) }}" class="w-100"
+                        <div class="carousel-item {{$loop->last ? 'active' : ''}}"><img src="{{ asset('storage/galleries/'. $gallery->image_url) }}" class="w-100"
                          alt="">
                         </div>
                       @endforeach
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
+    </div>
+</div>
 @endsection
 @push('js')    
     <script src="{{asset('admin/vendor/datatables/jquery.dataTables.min.js')}}"></script>

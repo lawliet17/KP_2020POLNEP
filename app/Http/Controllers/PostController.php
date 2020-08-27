@@ -48,18 +48,7 @@ class PostController extends Controller
             'id_details' => 'required',
             'en_details' => 'required',
             'category_id' => 'required'
-        ],
-            [
-                'id_title.required' => 'Masukkan title',
-                'en_title.required' => 'Inser Title',
-                'id_title.unique' => 'Judul harus berbeda',
-                'en_title.unique' => 'Title must different',
-                'thumbnail.required' => 'Harus diisi',
-                'id_details.required' => 'Harus diisi',
-                'en_details.required' => 'Must filled',
-                'category_id.required' => 'Pilih kategori'
-            ]
-        );
+        ]);
 
         $post = new Post();
         $post->user_id = Auth::id();
@@ -129,18 +118,7 @@ class PostController extends Controller
             'en_details' => 'required',
             'id_details' => 'required',
             'category_id' => 'required'
-        ],
-            [
-                'en_title.required' => 'Input title',
-                'en_title.unique' => 'Title be unique',                
-                'en_details.required' => 'Tittle harus diisi',
-                'id_title.required' => 'Masukkan title',
-                'id_title.unique' => 'Judul harus berbeda',
-                'thumbnail.required' => 'Harus diisi',
-                'id_details.required' => 'Harus diisi',
-                'category_id.required' => 'Pilih kategori'
-            ]
-        );
+        ]);
 
         $post->user_id = Auth::id();
         $post->en_title = $request->en_title;
